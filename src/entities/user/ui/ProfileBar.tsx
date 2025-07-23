@@ -25,7 +25,7 @@ export const ProfileBar = () => {
         <div className="bg-white/10 rounded-tr-[12px] flex flex-row items-center pl-16 pr-2 py-2 gap-2 max-h-[47px]">
           <img src={tokenTon1} alt="TON" className="w-7 h-7" />
           <span className="text-sm text-white font-semibold">0</span>
-          <div className="relative w-6 h-6 ml-auto">
+          <div className="relative w-6 h-6 ml-auto cursor-pointer">
             <img src={group} alt="Add" className="absolute inset-0 w-full h-full" />
           </div>
         </div>
@@ -41,7 +41,7 @@ export const ProfileBar = () => {
         <div className="bg-white/10 rounded-br-[12px] flex flex-row items-center pl-16 pr-2 py-2 gap-2 max-h-[47px]">
           <img src={tokenTon2} alt="TON" className="w-7 h-7" />
           <span className="text-sm text-white font-semibold">0.00</span>
-          <div className="relative w-6 h-6 ml-auto">
+          <div className="relative w-6 h-6 ml-auto cursor-pointer">
             <img src={group} alt="Add" className="absolute inset-0 w-full h-full" />
           </div>
         </div>
