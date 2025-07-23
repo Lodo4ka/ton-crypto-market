@@ -18,7 +18,7 @@ const tasks: Task[] = [
   {
     id: 'subscribe',
     icon: (
-      <span className="flex items-center justify-center w-16 h-16 rounded-full">
+      <span className="flex items-center justify-center w-16 h-16 rounded-full flex-1">
         {/* Можно заменить на <img src={require('...')} /> */}
         <img src={telegram} alt="people" className="w-[64px] h-[64px]" />
       </span>
@@ -31,7 +31,7 @@ const tasks: Task[] = [
   {
     id: 'invite',
     icon: (
-      <span className="flex items-center justify-center w-16 h-16 rounded-full">
+      <span className="flex items-center justify-center w-16 h-16 rounded-full flex-1">
         <img src={people} alt="people" className="w-[64px] h-[64px]" />
       </span>
     ),
@@ -46,7 +46,7 @@ const statusButton = (status: Task['status']) => {
   if (status === 'claimed') {
     return (
       <button
-        className="bg-green-900 bg-opacity-40 text-green-400 rounded-full px-10 py-2 text-xl font-semibold cursor-default cursor-pointer"
+        className="bg-green-900 bg-opacity-40 text-green-400 rounded-full px-10 py-2 text-xl font-semibold cursor-pointer"
         disabled
       >
         Claimed
@@ -73,8 +73,8 @@ export const OneTimeTask = ({ className }: { className?: string }) => {
               task.className,
             )}
           >
-            <div className="flex items-center gap-4">
-              {task.icon}
+            <div className="flex items-center gap-4 flex-1">
+              <div className="flex-1">{task.icon}</div>
               <div>
                 <div className="text-white text-xl font-semibold leading-tight">{task.title}</div>
                 <div className="text-green-400 text-lg font-bold flex items-center gap-1 mt-1">
