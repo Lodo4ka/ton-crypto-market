@@ -1,80 +1,53 @@
-import cn from 'classnames';
-import React from 'react';
-import telegram from '../../assets/tasks/telegram_logo.svg';
-import people from '../../assets/tasks/people_logo.svg';
-
-// Тип задачи
-interface Task {
+type Task = {
   id: string;
-  icon: React.ReactNode;
+  color: string; // Tailwind bg color
   title: string;
   reward: number;
-  status: 'claimed' | 'check';
-  className?: string;
-}
+};
 
-// Пример данных задач
 const tasks: Task[] = [
   {
-    id: 'subscribe',
-    icon: (
-      <span className="flex items-center justify-center w-16 h-16 rounded-full">
-        {/* Можно заменить на <img src={require('...')} /> */}
-        <img src={telegram} alt="people" className="w-[64px] h-[64px]" />
-      </span>
-    ),
-    title: 'Subscribe to @skinz channel',
+    id: 'lootbox',
+    color: 'bg-green-400',
+    title: 'Buy a loot box',
     reward: 200,
-    status: 'claimed',
-    className: 'bg-blue-500',
   },
   {
-    id: 'invite',
-    icon: (
-      <span className="flex items-center justify-center w-16 h-16 rounded-full">
-        <img src={people} alt="people" className="w-[64px] h-[64px]" />
-      </span>
-    ),
-    title: 'Invite friend',
-    reward: 250,
-    status: 'check',
-    className: 'bg-purple-500',
+    id: 'sell',
+    color: 'bg-yellow-400',
+    title: 'Sell an asset',
+    reward: 200,
+  },
+  {
+    id: 'something',
+    color: 'bg-sky-400',
+    title: 'Something else',
+    reward: 100,
+  },
+  {
+    id: 'something-more',
+    color: 'bg-red-600',
+    title: 'Something else more',
+    reward: 100,
   },
 ];
 
-const statusButton = (status: Task['status']) => {
-  if (status === 'claimed') {
-    return (
-      <button
-        className="bg-green-900 bg-opacity-40 text-green-400 rounded-full px-10 py-2 text-xl font-semibold cursor-default cursor-pointer"
-        disabled
-      >
-        Claimed
-      </button>
-    );
-  }
-  return (
-    <button className="bg-gray-700 bg-opacity-60 text-gray-200 rounded-full px-10 py-2 text-xl font-semibold hover:bg-gray-600 transition cursor-pointer">
-      Check
-    </button>
-  );
+type DailyTaskProps = {
+  className?: string;
 };
 
-export const OneTimeTask = ({ className }: { className?: string }) => {
+export const DailyTask = ({ className }: DailyTaskProps) => {
   return (
-    <div className={cn('max-w-xl mx-auto mt-6', className)}>
-      <h2 className="text-gray-400 text-2xl font-semibold mb-2">ONE-TIME TASKS</h2>
+    <div className={`max-w-xl mx-auto mt-6 ${className ?? ''}`}>
+      <h2 className="text-gray-400 text-2xl font-semibold mb-2">DAILY TASKS</h2>
       <div className="space-y-4">
         {tasks.map((task) => (
           <div
             key={task.id}
-            className={cn(
-              'flex items-center justify-between bg-zinc-900 rounded-2xl px-6 py-4 shadow-md',
-              task.className,
-            )}
+            className="flex items-center justify-between bg-zinc-900 rounded-2xl px-6 py-4 shadow-md"
           >
             <div className="flex items-center gap-4">
-              {task.icon}
+              <span className={`w-16 h-16 rounded-full ${task.color} flex-shrink-0`} />
               <div>
                 <div className="text-white text-xl font-semibold leading-tight">{task.title}</div>
                 <div className="text-green-400 text-lg font-bold flex items-center gap-1 mt-1">
@@ -96,7 +69,9 @@ export const OneTimeTask = ({ className }: { className?: string }) => {
                 </div>
               </div>
             </div>
-            {statusButton(task.status)}
+            <button className="bg-gray-700 bg-opacity-60 text-gray-200 rounded-full px-10 py-2 text-xl font-semibold hover:bg-gray-600 transition cursor-pointer">
+              Start
+            </button>
           </div>
         ))}
       </div>
