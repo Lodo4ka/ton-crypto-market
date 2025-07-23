@@ -24,7 +24,7 @@ const Profile = () => {
   const [activeTab, setActiveTab] = useState('tasks');
 
   return (
-    <div className="pt-[30px]">
+    <div className="">
       <ProfileBar />
       <ProfileTitle className="mt-[8px]" />
       <TonWallet className="mt-[20px] flex justify-center" />
