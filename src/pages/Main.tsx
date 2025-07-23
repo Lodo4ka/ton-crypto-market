@@ -5,6 +5,7 @@ import { ProfileTitle } from '../entities/user/ui/ProfileTitle';
 import { TonWallet } from '../shared/ui/TonWallet';
 import { ProgressLevelBar } from '../entities/user/ui/ProgressLevelBar';
 import NavbarTabs from '../shared/ui/navbar-tabs/NavbarTabs';
+import { OneTimeTask } from '../features/user/OneTimeTask';
 
 type Tab = {
   label: string;
@@ -39,6 +40,7 @@ const Profile = () => {
         onTabClick={setActiveTab}
         className="mt-[20px]"
       />
+      <OneTimeTask className="mt-[24px]" />
     </div>
   );
 };
