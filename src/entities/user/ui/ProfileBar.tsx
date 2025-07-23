@@ -7,7 +7,7 @@ import group from '../../../assets/profile/group.svg';
 
 export const ProfileBar = () => {
   return (
-    <div className="flex flex-col items-center w-full max-w-md mx-auto gap-4 relative">
+    <div className="flex flex-col items-center w-full  gap-4 relative">
       <img
         src={imgAvatar}
         alt="avatar"
