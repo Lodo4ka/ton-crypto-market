@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+:root {
+  --tg-bg-black: #000000;
+  --tg-bg-dark: #1a1a1a;
+  --tg-bg-blue: #007aff;
+  --tg-bg-green: #49df64;
+  --tg-bg-white: #ffffff;
+  --tg-bg-gray: #74748029;
+  --tg-text-gray: rgba(255, 255, 255, 0.60);
+  --tg-bg-light: rgba(255,255,255,0.1);
+  --tg-bg-light-2: rgba(255,255,255,0.15);
+  --tg-bg-light-3: rgba(255,255,255,0.25);
+  --tg-bg-light-4: rgba(255,255,255,0.32);
+  --tg-bg-light-5: rgba(255,255,255,0.4);
+  --tg-bg-light-6: rgba(255,255,255,0.6);
+  --tg-bg-light-7: rgba(255,255,255,0.2);
+}
+
+body {
+  font-size: 10px;
+  line-height: normal;
+}
+
+.text-gray {
+  color: var(--tg-text-gray);
+}
