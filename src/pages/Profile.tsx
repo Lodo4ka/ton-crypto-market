@@ -5,8 +5,9 @@ import { ProfileTitle } from '../entities/user/ui/ProfileTitle';
 import { TonWallet } from '../shared/ui/TonWallet';
 import { ProgressLevelBar } from '../entities/user/ui/ProgressLevelBar';
 import NavbarTabs from '../shared/ui/navbar-tabs/NavbarTabs';
-import { OneTimeTask } from '../features/user/OneTimeTask';
-import { DailyTask } from '../features/user/DailyTask';
+import { OneTimeTask } from '../features/user/ui/OneTimeTask';
+import { DailyTask } from '../features/user/ui/DailyTask';
+import { Referrals } from '../features/user/ui/Referrals';
 
 type Tab = {
   label: string;
@@ -41,8 +42,13 @@ const Profile = () => {
         onTabClick={setActiveTab}
         className="mt-[20px]"
       />
-      <OneTimeTask className="mt-[24px]" />
-      <DailyTask className="mt-[40px]" />
+      {activeTab === 'tasks' && (
+        <>
+          <OneTimeTask className="mt-[24px]" />
+          <DailyTask className="mt-[40px]" />
+        </>
+      )}
+      {activeTab === 'referrals' && <Referrals className="mt-[24px]" />}
     </div>
   );
 };

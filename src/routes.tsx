@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Profile from './pages/Main';
+import Profile from './pages/Profile';
 import { BottomNavbar } from './shared/ui/bottom-navbar/BottomNavbar';
 
 const AppRouter: React.FC = () => (

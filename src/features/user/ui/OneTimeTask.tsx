@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import React from 'react';
-import telegram from '../../assets/tasks/telegram_logo.svg';
-import people from '../../assets/tasks/people_logo.svg';
+import telegram from '../../../assets/tasks/telegram_logo.svg';
+import people from '../../../assets/tasks/people_logo.svg';
 
 // Тип задачи
 interface Task {
