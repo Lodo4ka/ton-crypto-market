@@ -8,6 +8,7 @@ import NavbarTabs from '../shared/ui/navbar-tabs/NavbarTabs';
 import { OneTimeTask } from '../features/user/ui/OneTimeTask';
 import { DailyTask } from '../features/user/ui/DailyTask';
 import { Referrals } from '../features/user/ui/Referrals';
+import { InviteReferrals } from '../features/user/ui/InviteReferrals';
 
 type Tab = {
   label: string;
@@ -48,7 +49,12 @@ const Profile = () => {
           <DailyTask className="mt-[40px]" />
         </>
       )}
-      {activeTab === 'referrals' && <Referrals className="mt-[24px]" />}
+      {activeTab === 'referrals' && (
+        <>
+          <Referrals className="mt-[24px]" />
+          <InviteReferrals className="mt-[24px]" />
+        </>
+      )}
     </div>
   );
 };
