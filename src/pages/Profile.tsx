@@ -9,6 +9,7 @@ import { OneTimeTask } from '../features/user/ui/OneTimeTask';
 import { DailyTask } from '../features/user/ui/DailyTask';
 import { Referrals } from '../features/user/ui/Referrals';
 import { InviteReferrals } from '../features/user/ui/InviteReferrals';
+import { History } from '../features/user/ui/History';
 
 type Tab = {
   label: string;
@@ -55,6 +56,7 @@ const Profile = () => {
           <InviteReferrals className="mt-[24px]" />
         </>
       )}
+      {activeTab === 'history' && <History className="mt-[24px]" />}
     </div>
   );
 };
