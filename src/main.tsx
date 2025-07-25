@@ -4,6 +4,14 @@ import './index.css';
 import App from './App.tsx';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
+import WebApp from '@twa-dev/sdk';
+
+WebApp.ready();
+if (WebApp.initDataUnsafe?.user) {
+  console.log('Telegram User ID:', WebApp.initDataUnsafe.user.id);
+} else {
+  console.log('Telegram WebApp user not found');
+}
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

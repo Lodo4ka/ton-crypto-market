@@ -14,6 +14,7 @@
     "@tailwindcss/vite": "^4.1.11",
     "@tonconnect/ui": "^2.1.0",
     "@tonconnect/ui-react": "^2.2.0",
+    "@twa-dev/sdk": "^8.0.2",
     "@types/classnames": "^2.3.0",
     "autoprefixer": "^10.4.21",
     "axios": "^1.10.0",
