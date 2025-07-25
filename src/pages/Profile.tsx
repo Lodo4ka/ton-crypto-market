@@ -10,6 +10,7 @@ import { DailyTask } from '../features/user/ui/DailyTask';
 import { Referrals } from '../features/user/ui/Referrals';
 import { InviteReferrals } from '../features/user/ui/InviteReferrals';
 import { History } from '../features/user/ui/History';
+import { Settings } from '../features/user/ui/Settings';
 
 type Tab = {
   label: string;
@@ -57,6 +58,7 @@ const Profile = () => {
         </>
       )}
       {activeTab === 'history' && <History className="mt-[24px]" />}
+      {activeTab === 'settings' && <Settings className="mt-[24px]" />}
     </div>
   );
 };

@@ -1,8 +1,8 @@
-import React from "react";
-import ChevronIcon from "../../../assets/icons/chevron.svg";
-import RefreshIcon from "../../../assets/icons/update.svg";
-import PlusIcon from "../../../assets/icons/plus.svg";
-import LootboxImage from "../../../assets/lootbox.png";
+import React from 'react';
+import ChevronIcon from '../../../assets/icons/chevron.svg';
+import RefreshIcon from '../../../assets/icons/update.svg';
+import PlusIcon from '../../../assets/icons/plus.svg';
+import LootboxImage from '../../../assets/lootbox.png';
 
 interface HistoryTableProps {
   className?: string;
@@ -11,38 +11,38 @@ interface HistoryTableProps {
 const history = [
   {
     icon: LootboxImage,
-    title: "Buying a Loot box",
-    time: "17:03",
-    amount: "-14 999 Stars",
-    amountClass: "text-white",
+    title: 'Buying a Loot box',
+    time: '17:03',
+    amount: '-14 999 Stars',
+    amountClass: 'text-white',
   },
   {
     icon: RefreshIcon,
-    title: "Conversion",
-    time: "17:03",
-    amount: "+358 Stars",
-    amountClass: "text-white",
+    title: 'Conversion',
+    time: '17:03',
+    amount: '+358 Stars',
+    amountClass: 'text-white',
   },
   {
     icon: PlusIcon,
-    title: "Deposit",
-    time: "17:03",
-    amount: "+8.50 TON",
-    amountClass: "text-[#49DF64] font-semibold",
+    title: 'Deposit',
+    time: '17:03',
+    amount: '+8.50 TON',
+    amountClass: 'text-[#49DF64] font-semibold',
   },
 ];
 
 export const HistoryTable: React.FC<HistoryTableProps> = ({ className }) => {
   return (
-    <div className={`flex flex-col gap-3 w-full ${className || ""}`}>
+    <div className={`flex flex-col gap-3 w-full ${className || ''}`}>
       {history.map((item, idx) => (
         <div
           key={idx}
-          className="flex items-center justify-between bg-white/5 rounded-lg px-4 py-3"
+          className="flex items-center justify-between border-b border-white/10 rounded-lg px-4 py-3"
         >
           {/* Icon */}
           <div className={`flex items-center justify-center rounded-lg ${item.iconBg}`}>
-            {typeof item.icon === "string" ? (
+            {typeof item.icon === 'string' ? (
               <img src={item.icon} alt="icon" className="object-cover" />
             ) : (
               item.icon
