@@ -26,16 +26,16 @@ const overlaySlice = createSlice({
   name: 'overlay',
   initialState,
   reducers: {
-    openOverlay(state, action: PayloadAction<OverlayContentPayload>) {
+    openLootbox(state, action: PayloadAction<OverlayContentPayload>) {
       state.isOpen = true;
       state.props = action.payload;
     },
-    closeOverlay(state) {
+    closeLootbox(state) {
       state.isOpen = false;
       state.props = null;
     },
   },
 });
 
-export const { openOverlay, closeOverlay } = overlaySlice.actions;
+export const { openLootbox, closeLootbox } = overlaySlice.actions;
 export default overlaySlice.reducer;

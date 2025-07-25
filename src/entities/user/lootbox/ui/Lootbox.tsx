@@ -11,7 +11,7 @@ interface OverlayContentProps {
   className?: string;
 }
 
-const OverlayContent = ({
+export const Lootbox = ({
   icon,
   title,
   description,
@@ -116,5 +116,3 @@ const OverlayContent = ({
     </div>
   );
 };
-
-export default OverlayContent;

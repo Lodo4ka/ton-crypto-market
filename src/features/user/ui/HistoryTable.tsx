@@ -4,7 +4,7 @@ import RefreshIcon from '../../../assets/icons/update.svg';
 import PlusIcon from '../../../assets/icons/plus.svg';
 import LootboxImage from '../../../assets/lootbox.png';
 import { useDispatch } from 'react-redux';
-import { openOverlay } from '../../../shared/ui/overlay/overlaySlice';
+import { openLootbox } from '../../../entities/user/lootbox/lib/visibilityLootboxSlice';
 
 interface HistoryItem {
   icon: string | React.ReactNode;
@@ -47,8 +47,8 @@ export const HistoryTable: React.FC<HistoryTableProps> = ({ className }) => {
 
   const handleClickOpenLootbox = (item: HistoryItem) => {
     dispatch(
-      openOverlay({
-        icon: <img src={item.icon} alt="lootbox" className="w-20 h-20" />,
+      openLootbox({
+        icon: item.icon,
         title: '-14 999 Stars',
         description: 'Buying a Loot box',
         date: 'June 25, 2025 at 17:04',
@@ -73,7 +73,6 @@ export const HistoryTable: React.FC<HistoryTableProps> = ({ className }) => {
           }}
           style={idx === 0 ? { cursor: 'pointer' } : {}}
         >
-          {/* Icon */}
           <div className={`flex items-center justify-center rounded-lg bg-white/5`}>
             {typeof item.icon === 'string' ? (
               <img src={item.icon} alt="icon" className="object-cover" />
@@ -81,14 +80,11 @@ export const HistoryTable: React.FC<HistoryTableProps> = ({ className }) => {
               item.icon
             )}
           </div>
-          {/* Title & Time */}
           <div className="flex flex-col flex-1 min-w-0 ml-3">
             <span className="text-white text-base leading-tight truncate">{item.title}</span>
             <span className="text-xs text-white/40 leading-tight">{item.time}</span>
           </div>
-          {/* Amount */}
           <span className={`ml-3 text-sm text-right ${item.amountClass}`}>{item.amount}</span>
-          {/* Chevron */}
           <button className="ml-3 p-1 cursor-pointer">
             <img src={ChevronIcon} alt="chevron" className="w-6 h-6 opacity-40" />
           </button>

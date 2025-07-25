@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import overlayReducer from '../shared/ui/overlay/overlaySlice';
+import overlayReducer from '../entities/user/lootbox/lib/visibilityLootboxSlice';
 
 export const store = configureStore({
   reducer: {

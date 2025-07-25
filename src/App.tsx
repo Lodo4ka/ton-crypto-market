@@ -1,6 +1,5 @@
 import { TonConnectUIProvider } from '@tonconnect/ui-react';
 import AppRouter from './routes';
-import OverlayPortal from './shared/ui/overlay/OverlayPortal';
 
 function App() {
   return (
@@ -10,7 +9,6 @@ function App() {
           <AppRouter />
         </div>
       </TonConnectUIProvider>
-      <OverlayPortal />
     </>
   );
 }
