@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counterSlice';
+import overlayReducer from '../shared/ui/overlay/overlaySlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    overlay: overlayReducer,
   },
 });
 

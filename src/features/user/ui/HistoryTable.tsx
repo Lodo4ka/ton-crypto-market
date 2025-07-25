@@ -3,12 +3,22 @@ import ChevronIcon from '../../../assets/icons/chevron.svg';
 import RefreshIcon from '../../../assets/icons/update.svg';
 import PlusIcon from '../../../assets/icons/plus.svg';
 import LootboxImage from '../../../assets/lootbox.png';
+import { useDispatch } from 'react-redux';
+import { openOverlay } from '../../../shared/ui/overlay/overlaySlice';
+
+interface HistoryItem {
+  icon: string | React.ReactNode;
+  title: string;
+  time: string;
+  amount: string;
+  amountClass: string;
+}
 
 interface HistoryTableProps {
   className?: string;
 }
 
-const history = [
+const history: HistoryItem[] = [
   {
     icon: LootboxImage,
     title: 'Buying a Loot box',
@@ -33,15 +43,38 @@ const history = [
 ];
 
 export const HistoryTable: React.FC<HistoryTableProps> = ({ className }) => {
+  const dispatch = useDispatch();
+
+  const handleClickOpenLootbox = (item: HistoryItem) => {
+    dispatch(
+      openOverlay({
+        icon: <img src={item.icon} alt="lootbox" className="w-20 h-20" />,
+        title: '-14 999 Stars',
+        description: 'Buying a Loot box',
+        date: 'June 25, 2025 at 17:04',
+        balanceFrom: '16 500',
+        balanceTo: '1 501',
+        itemTitle: 'Racer Box',
+        itemNumber: '425,',
+      }),
+    );
+  };
+
   return (
     <div className={`flex flex-col gap-3 w-full ${className || ''}`}>
       {history.map((item, idx) => (
         <div
           key={idx}
           className="flex items-center justify-between border-b border-white/10 rounded-lg px-4 py-3"
+          onClick={() => {
+            if (idx === 0) {
+              handleClickOpenLootbox(item);
+            }
+          }}
+          style={idx === 0 ? { cursor: 'pointer' } : {}}
         >
           {/* Icon */}
-          <div className={`flex items-center justify-center rounded-lg ${item.iconBg}`}>
+          <div className={`flex items-center justify-center rounded-lg bg-white/5`}>
             {typeof item.icon === 'string' ? (
               <img src={item.icon} alt="icon" className="object-cover" />
             ) : (

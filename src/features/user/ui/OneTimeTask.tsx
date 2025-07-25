@@ -75,7 +75,7 @@ export const OneTimeTask = ({ className }: { className?: string }) => {
           >
             <div className="flex items-center gap-4 flex-1">
               <div className="flex-1">{task.icon}</div>
-              <div>
+              <div className="flex-1">
                 <div className="text-white text-xl font-semibold leading-tight">{task.title}</div>
                 <div className="text-green-400 text-lg font-bold flex items-center gap-1 mt-1">
                   {task.reward}{' '}
