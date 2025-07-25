@@ -30,7 +30,7 @@ const LanguageFlag = ({
       className={`relative flex items-center justify-center rounded-full p-1 transition-all ${selected ? 'ring-4 ring-blue-500' : 'ring-2 ring-black/30'} ${className} cursor-pointer`}
       aria-pressed={selected}
     >
-      <img src={flags[code]} alt={code} className="w-12 h-12 rounded-full" />
+      <img src={flags[code] as string} alt={code} className="w-12 h-12 rounded-full" />
     </button>
   );
 };

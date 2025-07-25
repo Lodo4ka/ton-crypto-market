@@ -51,7 +51,7 @@ export const ProgressLevelBar = ({
             style={{ width: `${safePercent}%`, zIndex: 1 }}
           />
           {/* Деления-кружки */}
-          {marks.map((mark, idx) => {
+          {marks.map((mark) => {
             const isActive = safePercent >= mark;
             return (
               <div key={mark} className="absolute" style={{ left: `calc(${mark}% - 12px)` }}>
@@ -67,7 +67,7 @@ export const ProgressLevelBar = ({
         </div>
         {/* Подписи процентов */}
         <div className="flex justify-between mt-1">
-          {marks.map((mark, idx) => {
+          {marks.map((mark) => {
             const isActive = safePercent >= mark;
             return (
               <span

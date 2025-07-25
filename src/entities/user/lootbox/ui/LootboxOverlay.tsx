@@ -1,6 +1,19 @@
 import { Lootbox } from './Lootbox';
 import Overlay from '../../../../shared/ui/overlay/Overlay';
 
+interface LootboxProps {
+  icon: string;
+  title: string;
+  description: string;
+  date: string;
+  balanceFrom: string;
+  balanceTo: string;
+  itemTitle: string;
+  itemNumber: string;
+  onClose: () => void;
+  open: boolean;
+}
+
 export const LootboxOverlay = ({
   icon,
   title,

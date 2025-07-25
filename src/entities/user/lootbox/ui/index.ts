@@ -1,1 +1,1 @@
-export { default as Lootbox } from './Lootbox';
+export { Lootbox } from './Lootbox';
