@@ -13,9 +13,19 @@ export const History = ({ className = '' }: HistoryProps) => {
     setSearch(e.target.value);
   };
 
+  const onFilter = () => {
+    console.log('filter');
+  };
+
   return (
     <div className={className}>
-      <Search value={search} onChange={onClickHandleSearch} className="mb-[24px]" />
+      <Search
+        filtered
+        value={search}
+        onChange={onClickHandleSearch}
+        className="mb-[24px]"
+        onFilter={onFilter}
+      />
       <HistoryTable />
     </div>
   );
