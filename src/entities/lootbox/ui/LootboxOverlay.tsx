@@ -1,5 +1,5 @@
 import { Lootbox } from './Lootbox';
-import Overlay from '../../../../shared/ui/overlay/Overlay';
+import Overlay from '../../../shared/ui/overlay/Overlay';
 
 interface LootboxProps {
   icon: string;

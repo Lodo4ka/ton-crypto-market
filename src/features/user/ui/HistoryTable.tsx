@@ -4,7 +4,7 @@ import RefreshIcon from '../../../assets/icons/update.svg';
 import PlusIcon from '../../../assets/icons/plus.svg';
 import LootboxImage from '../../../assets/lootbox.png';
 import { useDispatch } from 'react-redux';
-import { openLootbox } from '../../../entities/user/lootbox/lib/visibilityLootboxSlice';
+import { openLootbox } from '../../../entities/lootbox/lib/visibilityLootboxSlice';
 
 interface HistoryItem {
   icon: string | React.ReactNode;
