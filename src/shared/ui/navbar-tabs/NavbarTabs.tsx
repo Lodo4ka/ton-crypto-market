@@ -42,8 +42,8 @@ const NavbarTabs = ({ tabs, activeTab, onTabClick, className }: NavbarTabsProps)
   }, [activeTab, tabs]);
 
   return (
-    <nav ref={containerRef} className={cn('relative bg-black py-2', className)}>
-      <div className="relative flex gap-10 overflow-x-auto whitespace-nowrap scrollbar-hide">
+    <nav ref={containerRef} className={cn('relative bg-black py-2 overflow-visible', className)}>
+      <div className="relative flex gap-10 overflow-x-auto whitespace-nowrap scrollbar-hide overflow-visible line-height-[3]">
         {tabs.map((tab, i) => {
           const isActive = tab.value === activeTab;
           return (
@@ -53,7 +53,7 @@ const NavbarTabs = ({ tabs, activeTab, onTabClick, className }: NavbarTabsProps)
                 tabRefs.current[i] = el;
               }}
               className={
-                'relative text-2xl font-medium transition-colors duration-150 cursor-pointer ' +
+                'relative text-2xl font-medium transition-colors duration-150 cursor-pointer leading-[2] ' +
                 (isActive ? 'text-white' : 'text-gray-500 hover:text-white')
               }
               onClick={() => onTabClick(tab.value)}
@@ -64,7 +64,10 @@ const NavbarTabs = ({ tabs, activeTab, onTabClick, className }: NavbarTabsProps)
         })}
         <span
           className="absolute bottom-0 h-1 bg-blue-500 rounded transition-all duration-300"
-          style={{ left: underlineStyle.left, width: underlineStyle.width }}
+          style={{
+            left: underlineStyle.left,
+            width: underlineStyle.width,
+          }}
         />
       </div>
     </nav>

@@ -20,6 +20,27 @@
 body {
   font-size: 10px;
   line-height: normal;
+  overflow-x: hidden; /* Скрываем горизонтальный скролл */
+}
+
+/* Скрытие скролл баров */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;  /* IE и Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Утилитарный класс для скрытия скролл баров */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE и Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari и Opera */
 }
 
 .text-gray {
