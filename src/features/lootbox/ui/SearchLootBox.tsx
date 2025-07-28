@@ -42,7 +42,11 @@ export const SearchLootBox = ({
         onSort={onSort}
       />
       <Overlay open={isFilterOpen} onClose={onCloseFilter}>
-        <FilterModal onApply={handleFilterApply} onReset={handleFilterReset} />
+        <FilterModal
+          onApply={handleFilterApply}
+          onReset={handleFilterReset}
+          onClose={onCloseFilter}
+        />
       </Overlay>
     </>
   );
