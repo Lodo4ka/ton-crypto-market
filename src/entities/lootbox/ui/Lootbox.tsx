@@ -1,3 +1,5 @@
+import { ButtonClose } from '../../../shared/ui/button-close/ButtonClose';
+
 interface OverlayContentProps {
   icon: string;
   title: string;
@@ -27,13 +29,9 @@ export const Lootbox = ({
     <div
       className={`bg-[#232323] rounded-2xl shadow-lg flex flex-col items-center px-6 pt-8 pb-4 gap-4 min-w-[320px] relative ${className}`}
     >
-      <button
-        className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full hover:bg-[#333] transition cursor-pointer text-2xl text-white"
-        onClick={onClose}
-        aria-label="Close"
-      >
-        ×
-      </button>
+      <div className="flex justify-end w-full">
+        <ButtonClose onClose={onClose} />
+      </div>
       <div className="mb-2 flex justify-center">
         <img src={icon} alt="lootbox" className="w-16 h-16" />
       </div>

@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import NavbarTabs from '../shared/ui/navbar-tabs/NavbarTabs';
 import type { Tab } from '../shared/ui/navbar-tabs/NavbarTabs.props';
-import { Search } from '../shared/ui/search/Search';
 import { Unlisted } from '../widgets/inventory/Unlisted';
 import { Listed } from '../widgets/inventory/Listed';
+import { SearchLootBox } from '../features/lootbox/ui/SearchLootBox';
+
+const TABS: Tab[] = [
+  { label: 'Unlisted', value: 'unlisted' },
+  { label: 'Listed', value: 'listed' },
+];
 
 export const Inventory = () => {
-  const TABS: Tab[] = [
-    { label: 'Unlisted', value: 'unlisted' },
-    { label: 'Listed', value: 'listed' },
-  ];
-
   const [activeTab, setActiveTab] = useState('unlisted');
   const [searchValue, setSearchValue] = useState('');
 
@@ -28,11 +28,9 @@ export const Inventory = () => {
 
   return (
     <div className="flex flex-col gap-[16px]">
-      <Search
-        value={searchValue}
-        onChange={onSearchChange}
-        sorted={true}
-        filtered={true}
+      <SearchLootBox
+        searchValue={searchValue}
+        handleSearchChange={onSearchChange}
         onSort={onSort}
         onFilter={onFilter}
       />

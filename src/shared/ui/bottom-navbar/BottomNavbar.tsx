@@ -53,7 +53,7 @@ export const BottomNavbar = ({ className }: BottomNavbarProps) => {
   return (
     <nav
       className={cn(
-        'w-full bg-[#181818] py-2 flex flex-col items-center border-t border-[#232323]',
+        'w-full bg-[#181818] py-2 flex flex-col items-center border-t border-[#232323] fixed bottom-0',
         className,
       )}
     >
