@@ -3,6 +3,7 @@ import CarImage from '../../assets/lootbox/car.png';
 import GlovesImage from '../../assets/lootbox/gloves.png';
 import { useState } from 'react';
 import type { LootboxInventoryProps } from '../../entities/LootboxInventory/ui/LootboxInventory.props';
+import { GotoAssets } from '../../features/lootbox/ui/GotoAssets';
 
 export const Unlisted = () => {
   const [unlistedItems, setUnlistedItems] = useState<LootboxInventoryProps[]>([
@@ -20,14 +21,18 @@ export const Unlisted = () => {
 
   return (
     <div className="flex flex-col gap-[16px]">
-      {unlistedItems.map((item) => (
-        <LootboxInventory
-          key={item.title}
-          lootboxIcon={item.lootboxIcon}
-          title={item.title}
-          description={item.description}
-        />
-      ))}
+      {unlistedItems.length > 0 ? (
+        unlistedItems.map((item) => (
+          <LootboxInventory
+            key={item.title}
+            lootboxIcon={item.lootboxIcon}
+            title={item.title}
+            description={item.description}
+          />
+        ))
+      ) : (
+        <GotoAssets />
+      )}
     </div>
   );
 };
