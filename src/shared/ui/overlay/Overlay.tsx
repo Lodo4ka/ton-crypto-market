@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 
 interface OverlayProps {
   open: boolean;
@@ -10,13 +11,16 @@ interface OverlayProps {
 const Overlay = ({ open, onClose, children, className = '' }: OverlayProps) => {
   if (!open) return null;
 
-  return (
+  return createPortal(
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 ${className}`}
+      className={`fixed inset-0 z-50 left-0 right-0 bottom-0 bg-opacity-60 flex ${className}`}
       onClick={onClose}
     >
-      <div onClick={(e) => e.stopPropagation()}>{children}</div>
-    </div>
+      <div className="w-full mt-auto" onClick={(e) => e.stopPropagation()}>
+        {children}
+      </div>
+    </div>,
+    document.body,
   );
 };
 

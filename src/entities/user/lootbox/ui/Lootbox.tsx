@@ -1,5 +1,5 @@
 interface OverlayContentProps {
-  icon: React.ReactNode;
+  icon: string;
   title: string;
   description?: string;
   date: string;
@@ -25,7 +25,7 @@ export const Lootbox = ({
 }: OverlayContentProps) => {
   return (
     <div
-      className={`bg-[#232323] rounded-2xl shadow-lg flex flex-col items-center px-6 pt-8 pb-4 gap-4 min-w-[320px] max-w-[90vw] relative ${className}`}
+      className={`bg-[#232323] rounded-2xl shadow-lg flex flex-col items-center px-6 pt-8 pb-4 gap-4 min-w-[320px] relative ${className}`}
     >
       <button
         className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full hover:bg-[#333] transition cursor-pointer text-2xl text-white"
@@ -34,7 +34,9 @@ export const Lootbox = ({
       >
         ×
       </button>
-      <div className="mb-2 flex justify-center">{icon}</div>
+      <div className="mb-2 flex justify-center">
+        <img src={icon} alt="lootbox" className="w-16 h-16" />
+      </div>
       <h2 className="text-3xl font-bold text-center text-white">{title}</h2>
       {description && <p className="text-gray-400 text-center text-lg">{description}</p>}
       <div className="w-full flex flex-col gap-4 mt-2">

@@ -4,7 +4,7 @@ import Overlay from '../../../../shared/ui/overlay/Overlay';
 interface LootboxProps {
   icon: string;
   title: string;
-  description: string;
+  description?: string;
   date: string;
   balanceFrom: string;
   balanceTo: string;

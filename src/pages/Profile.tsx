@@ -11,6 +11,10 @@ import { Referrals } from '../features/user/ui/Referrals';
 import { InviteReferrals } from '../features/user/ui/InviteReferrals';
 import { History } from '../features/user/ui/History';
 import { Settings } from '../features/user/ui/Settings';
+import { LootboxOverlay } from '../entities/user/lootbox/ui/LootboxOverlay';
+import type { RootState } from '../app/store';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
+import { closeLootbox } from '../entities/user/lootbox/lib/visibilityLootboxSlice';
 
 type Tab = {
   label: string;
@@ -26,6 +30,12 @@ const TABS: Tab[] = [
 
 const Profile = () => {
   const [activeTab, setActiveTab] = useState('tasks');
+  const { isOpen, props } = useAppSelector((state: RootState) => state.overlay);
+  const dispatch = useAppDispatch();
+
+  const onClickCloseLootbox = () => {
+    dispatch(closeLootbox());
+  };
 
   return (
     <div className="">
@@ -59,6 +69,14 @@ const Profile = () => {
       )}
       {activeTab === 'history' && <History className="mt-[24px]" />}
       {activeTab === 'settings' && <Settings className="mt-[24px]" />}
+      {isOpen && props && (
+        <LootboxOverlay
+          {...props}
+          onClose={onClickCloseLootbox}
+          open={isOpen}
+          icon={props.icon as string}
+        />
+      )}
     </div>
   );
 };
