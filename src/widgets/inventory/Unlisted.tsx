@@ -1,8 +1,8 @@
-import { LootboxInventory } from '../../entities/LootboxInventory/ui/LootboxInventory';
+import { LootboxInventory } from '../../entities/lootboxInventory/ui/LootboxInventory';
 import CarImage from '../../assets/lootbox/car.png';
 import GlovesImage from '../../assets/lootbox/gloves.png';
 import { useState } from 'react';
-import type { LootboxInventoryProps } from '../../entities/LootboxInventory/ui/LootboxInventory.props';
+import type { LootboxInventoryProps } from '../../entities/lootboxInventory/ui/LootboxInventory.props';
 import { GotoAssets } from '../../features/lootbox/ui/GotoAssets';
 
 export const Unlisted = () => {

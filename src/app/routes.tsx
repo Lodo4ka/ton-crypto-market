@@ -4,7 +4,7 @@ import Profile from '../pages/Profile';
 import { BottomNavbar } from '../shared/ui/bottom-navbar/BottomNavbar';
 import { Inventory } from '../pages/Inventory';
 import { MainLayout } from './layouts/MainLayout';
-import { Market } from '../pages/market';
+import { Market } from '../pages/Market';
 import { Game } from '../pages/Game';
 
 const AppRouter: React.FC = () => (
