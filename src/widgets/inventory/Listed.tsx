@@ -5,8 +5,8 @@ import { useState } from 'react';
 import type { LootboxInventoryProps } from '../../entities/lootboxInventory/ui/LootboxInventory.props';
 import { GotoAssets } from '../../features/lootbox/ui/GotoAssets';
 
-export const Unlisted = () => {
-  const [unlistedItems, setUnlistedItems] = useState<LootboxInventoryProps[]>([
+export const Listed = () => {
+  const [listedItems, setListedItems] = useState<LootboxInventoryProps[]>([
     {
       lootboxIcon: CarImage,
       title: 'Top Speed: Racing Legends',
@@ -21,8 +21,8 @@ export const Unlisted = () => {
 
   return (
     <div className="flex flex-col gap-[16px]">
-      {unlistedItems.length > 0 ? (
-        unlistedItems.map((item) => (
+      {listedItems.length > 0 ? (
+        listedItems.map((item) => (
           <LootboxInventory
             key={item.title}
             lootboxIcon={item.lootboxIcon}
