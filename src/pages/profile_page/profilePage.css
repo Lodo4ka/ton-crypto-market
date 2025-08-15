@@ -1,0 +1,544 @@
+/* Основные стили приложения */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #13100e;
+    color: white;
+    overflow-x: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  
+    scroll-behavior: smooth;
+  }
+  
+  .app-container {
+    min-height: 100vh;
+    background-color: #000000;
+    overflow: hidden;
+  }
+  
+  /* Loading */
+  .loading {
+    min-height: 100vh;
+    background-color: #13100e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loading-text {
+    color: white;
+    font-size: 18px;
+  }
+  
+  /* Home Page */
+  .home-page {
+    min-height: 100vh;
+    background-color: #000000;
+    color: white;
+    padding: 16px;
+  }
+  
+  .home-content {
+    text-align: center;
+    padding-top: 100px;
+  }
+  
+  .home-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 32px;
+  }
+  
+  .home-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  
+  .home-button:active {
+    opacity: 0.8;
+  }
+  
+  /* Profile Page */
+  .profile-page {
+    min-height: 100vh;
+    background-color: #000000;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    padding-bottom: 80px;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    padding-top: 54px;
+    z-index: 100;
+    width: 100%;
+  }
+  
+  .header-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .close-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #76768052;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    width: 76px;
+    height: 30px;
+  }
+  
+  .close-button:active {
+    opacity: 0.8;
+  }
+  
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background-color: #76768052;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    width: 72px;
+    height: 30px;
+  }
+  
+  .signal-bars {
+    display: flex;
+    gap: 2px;
+  }
+  
+  .signal-bar {
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+  }
+  
+  
+  /* Profile Section */
+  .profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top:14vh;
+    margin-bottom: 11vw;
+  }
+  
+  .profile-avatar {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  
+  .profile-name {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    font-family: 'Russo One', sans-serif;
+    font-weight: 400;
+  
+  }
+  
+  .profile-id {
+    display: flex;
+    align-items: center;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 400;
+    gap: 8px;
+    color: #F3F084;
+    font-size: 18px;
+  }
+  
+  /* Collection Section */
+  .collection-section {
+    padding: 0 16px;
+  }
+  
+  .collection-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    margin-bottom: 16px;
+    color: #fff;
+  }
+  
+  .collection-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .collection-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #374151;
+    border: 1px #FFFFFF26;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+  }
+  
+  .icon-placeholder {
+    width: 24px;
+    height: 24px;
+    background-color: #9ca3af;
+    border-radius: 4px;
+  }
+  
+  .collection-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 12px;
+  }
+  
+  .collection-name {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .verified-badge {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .collection-count {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 16px;
+    color: #AFB0B0;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 400;
+  }
+  
+  /* Collection Grid */
+  .collection-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 114px);
+    gap: 10px;
+    padding-bottom: 80px;
+    height: 172px;
+  }
+  
+  .collection-item {
+    background-color: transparent;
+    height: 172px;
+    width: 114px;
+    overflow: hidden;
+  }
+  
+  .item-image {
+    height: 114px;
+    width: 114px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 12px;
+  }
+  
+  .item-bg-blue {
+    background: #B0C3D9;
+  }
+  
+  .item-bg-orange {
+    background: #FF9411;
+  }
+  
+  /* Armor Item */
+  .armor-item {
+    width: 80px;
+    height: 96px;
+    background-color: #166534;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .armor-green {
+    background-color: #166534;
+  }
+  
+  .armor-visor {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 16px;
+    height: 8px;
+    background-color: #fbbf24;
+    border-radius: 2px;
+  }
+  
+  .armor-face {
+    position: absolute;
+    top: 16px;
+    left: 8px;
+    right: 8px;
+    height: 12px;
+    background-color: #0f5132;
+    border-radius: 4px;
+  }
+  
+  .armor-chest {
+    position: absolute;
+    bottom: 24px;
+    left: 4px;
+    right: 4px;
+    height: 16px;
+    background-color: #15803d;
+    border-radius: 4px;
+  }
+  
+  .armor-details {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    height: 8px;
+    background-color: #0f5132;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    padding: 2px;
+  }
+  
+  .armor-detail {
+    background-color: #052e16;
+    border-radius: 2px;
+  }
+  
+  /* Helmet Item */
+  .helmet-item {
+    width: 64px;
+    height: 48px;
+    background-color: #166534;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .helmet-green {
+    background-color: #166534;
+  }
+  
+  .helmet-main {
+    width: 40px;
+    height: 32px;
+    background-color: #fbbf24;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .helmet-grill {
+    position: absolute;
+    inset: 4px 8px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1px;
+  }
+  
+  .grill-hole {
+    background-color: #d97706;
+    border-radius: 1px;
+  }
+  
+  .helmet-strap-left,
+  .helmet-strap-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 24px;
+    background-color: #6b7280;
+    border-radius: 2px;
+  }
+  
+  .helmet-strap-left {
+    left: -8px;
+  }
+  
+  .helmet-strap-right {
+    right: -8px;
+  }
+  
+  /* Item Info */
+  .item-info {
+    padding: 0px;
+    margin-top: 6px;
+  }
+  
+  .item-name {
+    color: white;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  
+  .item-rarity {
+    font-size: 12px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+  }
+  
+  .item-rarity.uncommon {
+    color: #9ca3af;
+  }
+  
+  .item-rarity.legendary {
+    color: #fb923c;
+  }
+  
+  .item-number {
+    color: #6b7280;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+  }
+  
+  /* Bottom Navigation */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #151413;
+    border-top: 1px solid #FFFFFF1A;
+  }
+  
+  .nav-items {
+    display: flex;
+    justify-content: center;
+    gap: 96px;
+    padding: 12px 0;
+  }
+  
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+  }
+  
+  .nav-icon:not(.active) {
+    background-color: transparent;
+  }
+  
+  .nav-icon.active {
+    background-color: transparent;
+    border-radius: 50%;
+  }
+  
+  .nav-label {
+    font-size: 12px;
+  }
+  
+  .nav-label.inactive {
+    color: #AFB0B0;
+  }
+  
+  .nav-label.active {
+    color: #72C0EC;
+  }
+  
+  .home-indicator {
+    width: 128px;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    margin: 0 auto 8px auto;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .profile-name {
+      font-size: 24px;
+    }
+    
+    .profile-id {
+      font-size: 16px;
+    }
+    
+    .collection-name {
+      font-size: 18px;
+    }
+    
+    .collection-grid {
+      gap: 10px;
+    }
+  }
+  
+  .rotate-90 {
+    transform: rotate(-90deg);
+  }
