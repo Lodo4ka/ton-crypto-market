@@ -31,5 +31,3 @@ export const Badge = ({ type = 'yellow', children, className }: BadgeProps) => {
 };
 
 export default Badge;
-
-
