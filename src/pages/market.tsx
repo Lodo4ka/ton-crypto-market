@@ -10,6 +10,7 @@ import { TextField } from '../shared/ui/text-field';
 import { Badge } from '../shared/ui/badge';
 import { BuyBadge } from '../shared/ui/buy-badge';
 import { SmallPillButton } from '../shared/ui/small-pill-button';
+import { TimerBadge } from '../shared/ui/timer-badge';
 
 const StickerRow = ({ images }: { images: string[] }) => {
   const items = images.slice(0, 3);
@@ -78,6 +79,33 @@ export const Market = () => {
             <BuyBadge color="yellow" amount={14999} />
           </div>
           <StickerRow images={[sticker4, sticker5, sticker6]} />
+        </div>
+
+        {/* Coming Soon */}
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center justify-between w-full gap-4">
+            <div className="flex flex-col gap-1">
+              <h3 className="text-white text-[20px]">Coming Soon</h3>
+              <span className="text-[#AFB0B0] text-[12px] font-extrabold opacity-60">
+                Don’t miss it
+              </span>
+            </div>
+            <TimerBadge text="3d 12:18:45" />
+          </div>
+          <div className="flex items-center gap-2 w-full">
+            {[sticker4, sticker5, sticker6].map((src, idx) => (
+              <div
+                key={`cs-${idx}`}
+                className="relative w-[114px] h-[114px] rounded-[12px] overflow-hidden bg-[#484544]"
+              >
+                <img
+                  src={src}
+                  alt={`cs-${idx}`}
+                  className="absolute inset-0 w-full h-full object-cover blur-[22px] opacity-70"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
