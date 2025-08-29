@@ -20,9 +20,8 @@ const getColors = (color: SmallPillButtonColor) => {
   }
   if (color === 'blue-blur') {
     return { container: 'bg-[rgba(114,192,236,0.25)]', text: 'text-[#72c0ec]' } as const;
-  } else if (color === 'yellow') {
-    return { container: 'bg-[#f3f084]', text: 'text-black' } as const;
   }
+  return { container: 'bg-[#f3f084]', text: 'text-black' } as const;
 };
 
 export const SmallPillFillButton = ({

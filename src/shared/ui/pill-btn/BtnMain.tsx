@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import React from 'react';
 
 export interface BtnPillProps {
   disabled?: boolean;
@@ -6,7 +7,7 @@ export interface BtnPillProps {
   className?: string;
   container?: string;
   text?: string;
-  label?: string;
+  label?: string | React.ReactNode;
 }
 
 export const BtnPill = ({ disabled, onClick, className, container, text, label }: BtnPillProps) => {
