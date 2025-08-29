@@ -17,7 +17,7 @@ export const BtnPill = ({ disabled, onClick, className, container, text, label }
       disabled={disabled}
       onClick={onClick}
       className={cn(
-        'inline-flex items-center justify-center h-8 px-3 rounded-[30px] cursor-pointer',
+        'inline-flex items-center justify-center px-3 rounded-[30px] cursor-pointer',
         'transition-opacity disabled:opacity-60 disabled:cursor-not-allowed font-russo',
         container,
         text,

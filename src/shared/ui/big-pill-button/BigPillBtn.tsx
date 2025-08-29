@@ -24,7 +24,7 @@ const getColors = (color: SmallPillButtonColor) => {
   return { container: 'bg-[#f3f084]', text: 'text-black' } as const;
 };
 
-export const SmallPillFillButton = ({
+export const BigPillFillButton = ({
   label = 'GET FREE',
   color = 'yellow',
   onClick,
@@ -39,10 +39,10 @@ export const SmallPillFillButton = ({
       text={text}
       label={label}
       onClick={onClick}
-      className={`text-[14px] h-8 font-medium leading-none ${className}`}
+      className={`text-[16px] w-full py-[16px] font-medium leading-none ${className}`}
       disabled={disabled}
     />
   );
 };
 
-export default SmallPillFillButton;
+export default BigPillFillButton;
