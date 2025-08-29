@@ -22,12 +22,6 @@ interface BottomNavbarProps {
 
 const NAV_LINKS: BottomNavLink[] = [
   {
-    label: 'Game',
-    to: '/game',
-    icon: gameIcon,
-    iconActive: gameIconActive,
-  },
-  {
     label: 'Market',
     to: '/market',
     icon: marketIcon,
