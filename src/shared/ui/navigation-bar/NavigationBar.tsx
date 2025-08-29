@@ -8,10 +8,9 @@ interface NavigationBarProps {
 }
 
 export const NavigationBar = ({
-  title = '',
   onBack,
   showMoreActions = true,
-  className = ''
+  className = '',
 }: NavigationBarProps) => {
   return (
     <div className={`bg-[var(--tg-bg-black)] ${className}`}>
@@ -33,10 +32,7 @@ export const NavigationBar = ({
 
       {/* Navigation */}
       <div className="flex items-center justify-between px-4 py-3">
-        <button
-          onClick={onBack}
-          className="flex items-center gap-2 text-white cursor-pointer"
-        >
+        <button onClick={onBack} className="flex items-center gap-2 text-white cursor-pointer">
           <ArrowLeft size={16} />
           <span className="text-base">Back</span>
         </button>

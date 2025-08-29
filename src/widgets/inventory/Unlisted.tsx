@@ -6,7 +6,7 @@ import type { LootboxInventoryProps } from '../../entities/lootboxInventory/ui/L
 import { GotoAssets } from '../../features/lootbox/ui/GotoAssets';
 
 export const Unlisted = () => {
-  const [unlistedItems, setUnlistedItems] = useState<LootboxInventoryProps[]>([
+  const [unlistedItems] = useState<LootboxInventoryProps[]>([
     {
       lootboxIcon: CarImage,
       title: 'Top Speed: Racing Legends',

@@ -39,6 +39,49 @@ export default tseslint.config([
 ])
 ```
 
+## Deploy to Vercel
+
+1. Убедитесь, что сборка проходит локально:
+   ```bash
+   npm ci
+   npm run build
+   ```
+2. Конфигурация SPA уже добавлена в `vercel.json` (output `dist`, rewrite на `index.html`).
+3. Деплой через Git:
+   - Импортируйте репозиторий в Vercel → New Project.
+   - Framework Preset: Vite.
+   - Build Command: `npm run build`.
+   - Output Directory: `dist`.
+   - Deploy.
+4. Деплой через CLI (опционально):
+   ```bash
+   npm i -g vercel
+   vercel --prod
+   ```
+5. Переменные окружения: Project Settings → Environment Variables.
+
+
+## Deploy to Netlify
+
+1. Убедитесь, что проект собирается:
+   ```bash
+   npm ci
+   npm run build
+   ```
+2. Конфиг SPA добавлен в `netlify.toml` (publish `dist`, редирект `/*` → `/index.html`).
+3. Деплой через Netlify UI:
+   - Создайте сайт → Import from Git.
+   - Build command: `npm run build`.
+   - Publish directory: `dist`.
+   - Deploy.
+4. Деплой через Netlify CLI (опционально):
+   ```bash
+   npm i -g netlify-cli
+   netlify deploy --prod --dir=dist
+   ```
+5. Переменные окружения: Site settings → Build & deploy → Environment.
+
+
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
 ```js

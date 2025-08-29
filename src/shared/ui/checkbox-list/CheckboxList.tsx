@@ -1,4 +1,3 @@
-import React from 'react';
 import cn from 'classnames';
 import { IconCheckbox } from '../icon-checkbox';
 
@@ -24,7 +23,10 @@ export const CheckboxList = ({ title, items, onToggle, className }: CheckboxList
         {items.map((item) => (
           <label key={item.id} className="flex items-center gap-4 cursor-pointer">
             <IconCheckbox checked={item.checked} onChange={(v) => onToggle(item.id, v)} />
-            <span className={cn('text-white text-[16px] leading-5', item.color && 'font-extrabold')} style={item.color ? { color: item.color } : undefined}>
+            <span
+              className={cn('text-white text-[16px] leading-5', item.color && 'font-extrabold')}
+              style={item.color ? { color: item.color } : undefined}
+            >
               {item.label}
             </span>
           </label>
@@ -35,5 +37,3 @@ export const CheckboxList = ({ title, items, onToggle, className }: CheckboxList
 };
 
 export default CheckboxList;
-
-

@@ -1,5 +1,4 @@
 import cn from 'classnames';
-import React from 'react';
 import magnifyOutline from '../../../assets/new-icons/655a9ba76442956014c9ca6ab86380233c533d38.svg';
 import magnifyFilled from '../../../assets/new-icons/c8dd1d239773151ab7c9e89c4549861b9586766d.svg';
 import xmarkCircle from '../../../assets/new-icons/37c661ea2bd8220686b7825eeb06d17af594bdfc.svg';
@@ -37,11 +36,7 @@ export const TextField = ({
       )}
     >
       {showSearch && (
-        <img
-          src={value ? magnifyFilled : magnifyOutline}
-          alt="search"
-          className="w-5 h-[22px]"
-        />
+        <img src={value ? magnifyFilled : magnifyOutline} alt="search" className="w-5 h-[22px]" />
       )}
       <input
         type="text"
@@ -68,5 +63,3 @@ export const TextField = ({
 };
 
 export default TextField;
-
-

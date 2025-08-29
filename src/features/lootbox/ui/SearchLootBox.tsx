@@ -2,12 +2,13 @@ import Overlay from '../../../shared/ui/overlay/Overlay';
 import { Search } from '../../../shared/ui/search/Search';
 import { FilterModal } from './FilterModal';
 import { useState } from 'react';
+import type { FilterState } from '../../types';
 
 interface SearchLootBoxProps {
   searchValue: string;
   handleSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSort: () => void;
-  onFilter: () => void;
+  onFilter: (filters: FilterState) => void;
 }
 
 export const SearchLootBox = ({
