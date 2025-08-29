@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ProfileBar } from '../entities/user/ui/ProfileBar.tsx';
 import { ProfileTitle } from '../entities/user/ui/ProfileTitle.tsx';
 import { SmallPillFillButton } from '../shared/ui/small-pill-fill-button/SmallPillButton.tsx';
+import { ProfileCollectionsDropdown } from '../entities/user/ui/ProfileCollectionsDropdown.tsx';
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -11,6 +12,9 @@ const Profile = () => {
     <div className="">
       <ProfileBar />
       <ProfileTitle className="mt-[16px]" />
+      <div className="mt-[16px] px-[16px]">
+        <ProfileCollectionsDropdown />
+      </div>
       <div className="mt-[81px] flex flex-col items-center text-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
