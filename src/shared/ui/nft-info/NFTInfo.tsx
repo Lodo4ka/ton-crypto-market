@@ -14,10 +14,10 @@ export const NFTInfo = ({
   title,
   collection,
   description,
-  nftLabel = "NFT",
+  nftLabel = 'NFT',
   leftCount,
   totalCount,
-  className = ''
+  className = '',
 }: NFTInfoProps) => {
   return (
     <div className={`px-4 py-4 ${className}`}>
@@ -42,7 +42,9 @@ export const NFTInfo = ({
       {leftCount && totalCount && (
         <div className="flex items-center justify-between">
           <span className="text-white font-semibold">{nftLabel}</span>
-          <span className="text-gray-300 text-sm">Left: {leftCount} / {totalCount}</span>
+          <span className="text-gray-300 text-sm">
+            Left: {leftCount} / {totalCount}
+          </span>
         </div>
       )}
     </div>
