@@ -2,8 +2,6 @@ import { useState } from 'react';
 import NavbarTabs from '../shared/ui/navbar-tabs/NavbarTabs';
 import type { Tab } from '../shared/ui/navbar-tabs/NavbarTabs.props';
 import { SearchLootBox } from '../features/lootbox/ui/SearchLootBox';
-import { Unlisted } from '../widgets/inventory/Unlisted';
-import { Listed } from '../widgets/inventory/Listed';
 
 const TABS: Tab[] = [
   { label: 'Unlisted', value: 'unlisted' },
@@ -35,8 +33,6 @@ export const Inventory = () => {
         onFilter={onFilter}
       />
       <NavbarTabs tabs={TABS} activeTab={activeTab} onTabClick={setActiveTab} />
-      {activeTab === 'unlisted' && <Unlisted />}
-      {activeTab === 'listed' && <Listed />}
     </div>
   );
 };
