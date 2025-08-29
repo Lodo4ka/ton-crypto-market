@@ -6,6 +6,7 @@ import { Inventory } from '../pages/Inventory';
 import { MainLayout } from './layouts/MainLayout';
 import { Market } from '../pages/Market';
 import { Game } from '../pages/Game';
+import { GameFree } from '../pages/GameFree';
 
 const AppRouter: React.FC = () => (
   <BrowserRouter>
@@ -16,6 +17,7 @@ const AppRouter: React.FC = () => (
           <Route path="/inventory" element={<Inventory />} />
           <Route path="/market" element={<Market />} />
           <Route path="/game" element={<Game />} />
+          <Route path="/game-free" element={<GameFree />} />
           <Route path="*" element={<Profile />} />
         </Routes>
       </MainLayout>
