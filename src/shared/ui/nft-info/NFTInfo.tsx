@@ -67,7 +67,7 @@ export const NFTInfo = ({
       </div>
 
       {/* Description */}
-      <p className="text-gray-300 text-sm leading-relaxed mb-4">{description}</p>
+      <p className="text-[#AFB0B0] text-sm leading-relaxed">{description}</p>
 
       {/* NFT Count */}
       {leftCount && totalCount && (

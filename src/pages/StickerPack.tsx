@@ -2,7 +2,6 @@ import { NFTInfo } from '../shared/ui/nft-info/NFTInfo.tsx';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y } from 'swiper/modules';
 import { useState } from 'react';
-import Button from '../shared/ui/button/Button.tsx';
 
 import sticker1 from '../assets/market/sticker1.png';
 import sticker2 from '../assets/market/sticker2.png';
@@ -11,6 +10,7 @@ import sticker4 from '../assets/market/sticker4.png';
 import sticker5 from '../assets/market/sticker5.png';
 import sticker6 from '../assets/market/sticker6.png';
 import { BigPillFillButton } from '../shared/ui/big-pill-button/BigPillBtn.tsx';
+import { SuccessBadge } from '../shared/ui/success-badge';
 
 export const StickerPack = () => {
   const stickers = [sticker1, sticker2, sticker3, sticker4, sticker5, sticker6];
@@ -18,7 +18,12 @@ export const StickerPack = () => {
 
   return (
     <div className="bg-[var(--tg-bg-black)] text-white">
-      <div className="pt-6">
+      {/* Success badge */}
+      <div className="px-4 pt-4">
+        <SuccessBadge message="Sticker Pack was added to your profile" variant="tint" />
+      </div>
+
+      <div className="pt-4">
         <NFTInfo
           title="The Dye Cut Pack"
           collection="Armor Collection"
