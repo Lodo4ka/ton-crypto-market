@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import NavbarTabs from '../shared/ui/navbar-tabs/NavbarTabs';
 import type { Tab } from '../shared/ui/navbar-tabs/NavbarTabs.props';
+import { SearchLootBox } from '../features/lootbox/ui/SearchLootBox';
 import { Unlisted } from '../widgets/inventory/Unlisted';
 import { Listed } from '../widgets/inventory/Listed';
-import { SearchLootBox } from '../features/lootbox/ui/SearchLootBox';
 
 const TABS: Tab[] = [
   { label: 'Unlisted', value: 'unlisted' },

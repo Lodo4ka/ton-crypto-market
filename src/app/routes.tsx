@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Profile from '../pages/Profile.tsx';
-import { BottomNavbar } from '../shared/ui/bottom-navbar/BottomNavbar.tsx';
-import { Inventory } from '../pages/Inventory.tsx';
-import { MainLayout } from './layouts/MainLayout.tsx';
-import { Market } from '../pages/Market.tsx';
-import { Game } from '../pages/Game.tsx';
-import { GameFree } from '../pages/GameFree.tsx';
-import { NFTDetail } from '../pages/NFTDetail.tsx';
-import { StickerPack } from '../pages/StickerPack.tsx';
+import Profile from '../pages/Profile';
+import { BottomNavbar } from '../shared/ui/bottom-navbar/BottomNavbar';
+import { Inventory } from '../pages/Inventory';
+import { MainLayout } from './layouts/MainLayout';
+import { Market } from '../pages/Market';
+import { Game } from '../pages/Game';
+import { GameFree } from '../pages/GameFree';
+import { NFTDetail } from '../pages/NFTDetail';
+import { StickerPack } from '../pages/StickerPack';
 
 const AppRouter: React.FC = () => (
   <BrowserRouter>
