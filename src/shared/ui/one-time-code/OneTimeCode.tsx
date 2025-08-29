@@ -1,4 +1,3 @@
-import React from 'react';
 import cn from 'classnames';
 
 export interface OneTimeCodeProps {
@@ -39,5 +38,3 @@ export const OneTimeCode = ({ length = 6, value, onChange, className }: OneTimeC
 };
 
 export default OneTimeCode;
-
-
