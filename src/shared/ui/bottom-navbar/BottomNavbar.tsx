@@ -66,7 +66,7 @@ export const BottomNavbar = ({ className }: BottomNavbarProps) => {
               to={link.to}
               className={cn(
                 'flex flex-col items-center gap-1 text-sm font-medium cursor-pointer',
-                isActive ? 'text-blue-500' : 'text-gray-400',
+                isActive ? 'text-primary-blue' : 'text-gray-400',
               )}
             >
               <span

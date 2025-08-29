@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@theme {
+  /* Map CSS variables to Tailwind color tokens */
+  --color-main-bg: var(--main-bg);
+  --color-text-gray: var(--text-gray);
+  --color-text-white: var(--text-white);
+  --color-primary-yellow-1: var(--primary-yellow-1);
+  --color-primary-yellow-2: var(--primary-yellow-2);
+  --color-primary-yellow-3: var(--primary-yellow-3);
+  --color-primary-yellow-4: var(--primary-yellow-4);
+  --color-primary-blue: var(--primary-blue);
+  --color-primary-blue-lg-1: var(--primary-blue--lg-1);
+  --color-primary-blue-lg-2: var(--primary-blue--lg-2);
+  --color-primary-blue-lg-3: var(--primary-blue--lg-3);
+  --color-primary-blue-lg-4: var(--primary-blue--lg-4);
+}
+
 :root {
   --tg-bg-black: #000000;
   --tg-bg-dark: #1a1a1a;
@@ -15,6 +31,18 @@
   --tg-bg-light-5: rgba(255,255,255,0.4);
   --tg-bg-light-6: rgba(255,255,255,0.6);
   --tg-bg-light-7: rgba(255,255,255,0.2);
+  --main-bg: #130f0e;
+  --text-white: #ffffff;
+  --text-gray: #afb0b0;
+  --primary-yellow-1: #f3f084;
+  --primary-yellow-2: #f8f7b0;
+  --primary-yellow-3: #fafac6;
+  --primary-yellow-4: #fdfde1;
+  --primary-blue: #72c0ec;
+  --primary-blue--lg-1: #8bcbef;
+  --primary-blue--lg-2: #a4d5f2;
+  --primary-blue--lg-3: #bde0f5;
+  --primary-blue--lg-4: #d6ebf8;
 }
 
 body {

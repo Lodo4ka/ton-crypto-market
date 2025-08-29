@@ -7,30 +7,18 @@ import sticker4 from '../assets/market/sticker4.png';
 import sticker5 from '../assets/market/sticker5.png';
 import sticker6 from '../assets/market/sticker6.png';
 import { TextField } from '../shared/ui/text-field';
-import { Badge } from '../shared/ui/badge';
 import { BuyBadge } from '../shared/ui/buy-badge';
 import { SmallPillButton } from '../shared/ui/small-pill-button';
 import { TimerBadge } from '../shared/ui/timer-badge';
+import { Banner } from '../entities/lootbox/ui/Banner';
+import { Sticker } from '../entities/lootbox/ui/Sticker';
 
 const StickerRow = ({ images }: { images: string[] }) => {
   const items = images.slice(0, 3);
   return (
     <div className="flex items-center justify-center gap-2 w-full">
       {items.map((src, idx) => (
-        <div key={idx} className="relative w-[114px] h-[114px] rounded-[12px] overflow-hidden">
-          <img
-            src={src}
-            alt={`sticker-${idx}`}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          {idx === 2 && (
-            <div className="absolute top-1 right-1">
-              <Badge type="gray" className="!px-2 !py-0.5 !rounded-[12px]">
-                2 more
-              </Badge>
-            </div>
-          )}
-        </div>
+        <Sticker key={idx} src={src} idx={idx} badge={idx === 2 ? '2 more' : ''} />
       ))}
     </div>
   );
@@ -43,10 +31,7 @@ export const Market = () => {
     <div className="flex flex-col gap-4">
       <TextField type="search" value={search} onChange={setSearch} placeholder="Search" />
 
-      <div className="w-full h-[202px] rounded-[12px] overflow-hidden">
-        <img src={banner} alt="banner" className="w-full h-full object-cover" />
-      </div>
-
+      <Banner image={banner} />
       <div className="flex flex-col gap-8">
         {/* Free Starter Pack */}
         <div className="flex flex-col gap-4 items-end">

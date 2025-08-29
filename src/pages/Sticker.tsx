@@ -60,3 +60,4 @@ export const Sticker = () => {
 export default Sticker;
 
 
+
