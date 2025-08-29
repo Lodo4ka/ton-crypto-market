@@ -4,6 +4,7 @@ import cn from 'classnames';
 import chevronIcon from '../../../assets/icons/chevron-white.svg';
 import armorAvatar from '../../../assets/armor_icon.png';
 import productPaintball6 from '../../../assets/product_paintball6.png';
+import productMaskV2 from '../../../assets/product_mask_v2.png';
 
 export type ProfileCollection = {
   id: string;
@@ -106,23 +107,53 @@ export const ProfileCollectionsDropdown = ({
 
       {/* List */}
       {isOpen && (
-        <div className="mt-[12px] grid grid-cols-3 gap-x-[12px] gap-y-[12px]">
+        <div className="mt-[12px] grid grid-cols-3 gap-x-[8px] gap-y-[8px]">
           {/* Product Card from Figma 1269:11183 */}
-          <button type="button" className="w-[114px] flex flex-col items-start cursor-pointer">
-            <div className="w-[114px] h-[114px] rounded-[12px] overflow-hidden bg-[#B0C3D9]">
-              <img
-                src={productPaintball6}
-                alt="The Dye Cut Pack"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <span className="mt-[8px] text-white text-[16px] leading-[16px] font-bold truncate w-full">
-              The Dye Cut Pack
-            </span>
-            <span className="mt-[4px] text-[#B0C3D9] text-[12px] leading-[14px] font-bold uppercase">
-              UNCOMMON
-            </span>
-          </button>
+          <div>
+            <button
+              type="button"
+              className="w-full flex flex-col items-start cursor-pointer text-left"
+            >
+              <div className="rounded-[12px] overflow-hidden bg-[#B0C3D9]">
+                <img
+                  src={productPaintball6}
+                  alt="The Dye Cut Pack"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span className="mt-[8px] text-white text-[16px] leading-[16px] font-bold truncate w-full">
+                The Dye Cut Pack
+              </span>
+              <span className="mt-[4px] text-[#B0C3D9] text-[12px] leading-[14px] font-bold uppercase">
+                UNCOMMON
+              </span>
+            </button>
+          </div>
+
+          {/* Product Card from Figma 1269:11270 */}
+          <div>
+            <button
+              type="button"
+              className="w-full flex flex-col items-start cursor-pointer text-left"
+            >
+              <div className="rounded-[12px] overflow-hidden bg-[#FF9411]">
+                <img
+                  src={productMaskV2}
+                  alt="The Dye Cut Pack"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span className="mt-[8px] text-white text-[16px] leading-[16px] font-bold truncate w-full">
+                The Dye Cut Pack
+              </span>
+              <div className="mt-[4px] flex flex-col w-full">
+                <span className="text-[#FF9411] text-[12px] leading-[14px] font-bold uppercase">
+                  LEGENDARY
+                </span>
+                <span className="text-[#AFB0B0] text-[12px] leading-[14px]">#348 327</span>
+              </div>
+            </button>
+          </div>
         </div>
       )}
     </div>
