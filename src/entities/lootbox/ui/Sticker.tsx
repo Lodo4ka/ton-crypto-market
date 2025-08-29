@@ -1,8 +1,26 @@
 import { Badge } from '../../../shared/ui/badge';
+import cn from 'classnames';
 
-export const Sticker = ({ src, idx, badge }: { src: string; idx: number; badge: string }) => {
+export const Sticker = ({
+  src,
+  idx,
+  badge,
+  type,
+}: {
+  src: string;
+  idx: number;
+  badge: string;
+  type: 'uncommon' | 'gold';
+}) => {
   return (
-    <div key={idx} className="relative w-[114px] h-[114px] rounded-[12px] overflow-hidden">
+    <div
+      key={idx}
+      className={cn(
+        'relative w-[114px] h-[114px] rounded-[12px] overflow-hidden',
+        type === 'gold' && 'bg-[#FF9411]',
+        type === 'uncommon' && 'bg-[#B0C3D9]',
+      )}
+    >
       <img
         src={src}
         alt={`sticker-${idx}`}

@@ -1,7 +1,7 @@
 import banner from '../assets/collection/banner.png';
 import { Badge } from '../shared/ui/badge';
 import { BuyBadge } from '../shared/ui/buy-badge';
-import { SmallPillButton } from '../shared/ui/small-pill-button';
+import { SmallPillButton } from '../shared/ui/small-pill-fill-button';
 
 const StickerRow = ({ images }: { images: string[] }) => {
   const items = images.slice(0, 3);

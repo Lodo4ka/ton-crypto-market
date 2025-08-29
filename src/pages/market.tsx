@@ -8,17 +8,17 @@ import sticker5 from '../assets/market/sticker5.png';
 import sticker6 from '../assets/market/sticker6.png';
 import { TextField } from '../shared/ui/text-field';
 import { BuyBadge } from '../shared/ui/buy-badge';
-import { SmallPillButton } from '../shared/ui/small-pill-button';
+import { SmallPillFillButton } from '../shared/ui/small-pill-fill-button/SmallPillButton.tsx';
 import { TimerBadge } from '../shared/ui/timer-badge';
 import { Banner } from '../entities/lootbox/ui/Banner.tsx';
 import { Sticker } from '../entities/lootbox/ui/Sticker.tsx';
 
-const StickerRow = ({ images }: { images: string[] }) => {
+const StickerRow = ({ images, type }: { images: string[]; type: 'uncommon' | 'gold' }) => {
   const items = images.slice(0, 3);
   return (
     <div className="flex items-center justify-center gap-2 w-full">
       {items.map((src, idx) => (
-        <Sticker key={idx} src={src} idx={idx} badge={idx === 2 ? '2 more' : ''} />
+        <Sticker key={idx} src={src} idx={idx} badge={idx === 2 ? '2 more' : ''} type={type} />
       ))}
     </div>
   );
@@ -37,25 +37,28 @@ export const Market = () => {
         <div className="flex flex-col gap-4 items-end">
           <div className="flex items-center justify-between w-full gap-4">
             <div className="flex flex-col justify-center gap-1">
-              <h2 className="text-white text-[22px] tracking-[0.03em] font-[400]">
+              <h2 className="text-white text-[22px] tracking-[0.03em] font-[400] font-russo">
                 Free Starter Pack
               </h2>
-              <span className="text-[#B0C3D9] text-[12px] font-extrabold">UNCOMMON</span>
+              <span className="text-[#B0C3D9] text-[12px] font-extrabold font-exo2">UNCOMMON</span>
               <div className="flex items-center gap-3 h-4">
                 <span className="text-[#AFB0B0] text-[12px]">Aromor collection</span>
               </div>
             </div>
-            <SmallPillButton label="GET FREE" color="yellow" />
+            <SmallPillFillButton label="GET FREE" color="yellow" />
           </div>
-          <StickerRow images={[sticker1, sticker2, sticker3]} />
+          <StickerRow images={[sticker1, sticker2, sticker3]} type="uncommon" />
         </div>
 
         {/* The Gold Pack */}
         <div className="flex flex-col gap-4 items-end">
           <div className="flex items-center justify-between w-full gap-4">
             <div className="flex flex-col gap-1">
-              <h3 className="text-white text-[20px]">The Gold Pack</h3>
-              <span className="text-[#FF9411] text-[12px] font-extrabold">Legendary</span>
+              <div className="flex items-center gap-2">
+                <h3 className="text-white text-[20px] font-russo">The Gold Pack</h3>
+                <SmallPillFillButton label="GET FREE" color="yellow-blur" className="ml-auto" />
+              </div>
+              <span className="text-[#FF9411] text-[12px] font-extrabold font-exo2">LEGENDARY</span>
               <div className="flex items-center justify-between w-[358px]">
                 <span className="text-[#AFB0B0] text-[12px]">Aromor collection</span>
                 <span className="text-white text-[14px]">Left: 312  783 / 400  000</span>
@@ -63,14 +66,14 @@ export const Market = () => {
             </div>
             <BuyBadge color="yellow" amount={14999} />
           </div>
-          <StickerRow images={[sticker4, sticker5, sticker6]} />
+          <StickerRow images={[sticker4, sticker5, sticker6]} type="gold" />
         </div>
 
         {/* Coming Soon */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between w-full gap-4">
             <div className="flex flex-col gap-1">
-              <h3 className="text-white text-[20px]">Coming Soon</h3>
+              <h3 className="text-white text-[20px] font-russo">Coming Soon</h3>
               <span className="text-[#AFB0B0] text-[12px] font-extrabold opacity-60">
                 Don’t miss it
               </span>

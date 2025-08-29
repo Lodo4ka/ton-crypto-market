@@ -1,8 +1,8 @@
-import './MainLayout.css';
+import styles from './MainLayout.module.css';
 
 export const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="main-layout-container">
+    <div className={styles.mainLayoutContainer}>
       <div>{children}</div>
     </div>
   );
