@@ -1,4 +1,4 @@
-import { LootboxCard } from '../lootbox-card/LootboxCard';
+import { LootboxCard } from '../lootbox-card/LootboxCard.tsx';
 
 interface LootboxData {
   id: string;

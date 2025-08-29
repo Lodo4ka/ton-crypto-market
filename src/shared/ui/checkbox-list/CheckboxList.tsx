@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { IconCheckbox } from '../icon-checkbox';
+import { IconCheckbox } from '../icon-checkbox/index.ts';
 
 export interface CheckboxItem {
   id: string;

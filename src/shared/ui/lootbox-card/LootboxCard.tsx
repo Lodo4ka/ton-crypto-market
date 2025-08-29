@@ -1,4 +1,4 @@
-import { RarityBadge } from '../rarity-badge/RarityBadge';
+import { RarityBadge } from '../rarity-badge/RarityBadge.tsx';
 
 interface LootboxCardProps {
   id: string;

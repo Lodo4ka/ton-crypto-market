@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import NavbarTabs from '../shared/ui/navbar-tabs/NavbarTabs';
-import type { Tab } from '../shared/ui/navbar-tabs/NavbarTabs.props';
-import { SearchLootBox } from '../features/lootbox/ui/SearchLootBox';
+import NavbarTabs from '../shared/ui/navbar-tabs/NavbarTabs.tsx';
+import type { Tab } from '../shared/ui/navbar-tabs/NavbarTabs.props.ts';
+import { SearchLootBox } from '../features/lootbox/ui/SearchLootBox.tsx';
 
 const TABS: Tab[] = [
   { label: 'Unlisted', value: 'unlisted' },

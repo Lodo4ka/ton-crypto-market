@@ -1,6 +1,6 @@
-import Overlay from '../../../shared/ui/overlay/Overlay';
-import { Search } from '../../../shared/ui/search/Search';
-import { FilterModal } from './FilterModal';
+import Overlay from '../../../shared/ui/overlay/Overlay.tsx';
+import { Search } from '../../../shared/ui/search/Search.tsx';
+import { FilterModal } from './FilterModal.tsx';
 import { useState } from 'react';
 import type { FilterState } from '../../types';
 

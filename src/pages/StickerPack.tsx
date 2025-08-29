@@ -1,4 +1,4 @@
-import { NFTInfo } from '../shared/ui/nft-info/NFTInfo';
+import { NFTInfo } from '../shared/ui/nft-info/NFTInfo.tsx';
 
 export const StickerPack = () => {
   return (

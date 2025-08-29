@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.tsx';
 import { Provider } from 'react-redux';
-import { store } from './app/store';
+import { store } from './app/store.ts';
 import WebApp from '@twa-dev/sdk';
 
 WebApp.ready();

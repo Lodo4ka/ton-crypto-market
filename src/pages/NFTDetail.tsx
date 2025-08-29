@@ -1,8 +1,8 @@
-import { NavigationBar } from '../shared/ui/navigation-bar/NavigationBar';
-import { NFTInfo } from '../shared/ui/nft-info/NFTInfo';
-import { NFTImage } from '../shared/ui/nft-image/NFTImage';
-import { NFTProperties } from '../shared/ui/nft-properties/NFTProperties';
-import { ActionButtons } from '../shared/ui/action-buttons/ActionButtons';
+import { NavigationBar } from '../shared/ui/navigation-bar/NavigationBar.tsx';
+import { NFTInfo } from '../shared/ui/nft-info/NFTInfo.tsx';
+import { NFTImage } from '../shared/ui/nft-image/NFTImage.tsx';
+import { NFTProperties } from '../shared/ui/nft-properties/NFTProperties.tsx';
+import { ActionButtons } from '../shared/ui/action-buttons/ActionButtons.tsx';
 
 // Mock data
 const NFT_DATA = {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Checkbox } from '../../../shared/ui/Checkbox/Checkbox';
-import { ButtonClose } from '../../../shared/ui/button-close/ButtonClose';
+import { Checkbox } from '../../../shared/ui/Checkbox/Checkbox.tsx';
+import { ButtonClose } from '../../../shared/ui/button-close/ButtonClose.tsx';
 
 interface FilterModalProps {
   className?: string;

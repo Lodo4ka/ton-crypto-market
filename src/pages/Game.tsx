@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { GameBanner } from '../shared/ui/game-banner/GameBanner';
-import { GameInfo } from '../shared/ui/game-info/GameInfo';
-import { LootboxGrid } from '../shared/ui/lootbox-grid/LootboxGrid';
-import { PlayButton } from '../shared/ui/play-button/PlayButton';
-import NavbarTabs from '../shared/ui/navbar-tabs/NavbarTabs';
-import type { Tab } from '../shared/ui/navbar-tabs/NavbarTabs.props';
+import { GameBanner } from '../shared/ui/game-banner/GameBanner.tsx';
+import { GameInfo } from '../shared/ui/game-info/GameInfo.tsx';
+import { LootboxGrid } from '../shared/ui/lootbox-grid/LootboxGrid.tsx';
+import { PlayButton } from '../shared/ui/play-button/PlayButton.tsx';
+import NavbarTabs from '../shared/ui/navbar-tabs/NavbarTabs.tsx';
+import type { Tab } from '../shared/ui/navbar-tabs/NavbarTabs.props.ts';
 
 // Mock data
 const GAME_IMAGES = [

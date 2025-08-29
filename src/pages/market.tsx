@@ -10,8 +10,8 @@ import { TextField } from '../shared/ui/text-field';
 import { BuyBadge } from '../shared/ui/buy-badge';
 import { SmallPillButton } from '../shared/ui/small-pill-button';
 import { TimerBadge } from '../shared/ui/timer-badge';
-import { Banner } from '../entities/lootbox/ui/Banner';
-import { Sticker } from '../entities/lootbox/ui/Sticker';
+import { Banner } from '../entities/lootbox/ui/Banner.tsx';
+import { Sticker } from '../entities/lootbox/ui/Sticker.tsx';
 
 const StickerRow = ({ images }: { images: string[] }) => {
   const items = images.slice(0, 3);

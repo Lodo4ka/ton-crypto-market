@@ -1,21 +1,21 @@
 import { useState } from 'react';
 
-import { ProfileBar } from '../entities/user/ui/ProfileBar';
-import { ProfileTitle } from '../entities/user/ui/ProfileTitle';
-import { TonWallet } from '../shared/ui/TonWallet';
-import { ProgressLevelBar } from '../entities/user/ui/ProgressLevelBar';
-import NavbarTabs from '../shared/ui/navbar-tabs/NavbarTabs';
-import { OneTimeTask } from '../features/user/ui/OneTimeTask';
-import { DailyTask } from '../features/user/ui/DailyTask';
-import { Referrals } from '../features/user/ui/Referrals';
-import { InviteReferrals } from '../features/user/ui/InviteReferrals';
-import { History } from '../features/user/ui/History';
-import { Settings } from '../features/user/ui/Settings';
-import type { RootState } from '../app/store';
-import { useAppDispatch, useAppSelector } from '../app/hooks';
+import { ProfileBar } from '../entities/user/ui/ProfileBar.tsx';
+import { ProfileTitle } from '../entities/user/ui/ProfileTitle.tsx';
+import { TonWallet } from '../shared/ui/TonWallet.tsx';
+import { ProgressLevelBar } from '../entities/user/ui/ProgressLevelBar.tsx';
+import NavbarTabs from '../shared/ui/navbar-tabs/NavbarTabs.tsx';
+import { OneTimeTask } from '../features/user/ui/OneTimeTask.tsx';
+import { DailyTask } from '../features/user/ui/DailyTask.tsx';
+import { Referrals } from '../features/user/ui/Referrals.tsx';
+import { InviteReferrals } from '../features/user/ui/InviteReferrals.tsx';
+import { History } from '../features/user/ui/History.tsx';
+import { Settings } from '../features/user/ui/Settings.tsx';
+import type { RootState } from '../app/store.ts';
+import { useAppDispatch, useAppSelector } from '../app/hooks.ts';
 import type { Tab } from '../shared/ui/navbar-tabs/NavbarTabs.props';
-import { LootboxOverlay } from '../entities/lootbox/ui/LootboxOverlay';
-import { closeLootbox } from '../entities/lootbox/lib/visibilityLootboxSlice';
+import { LootboxOverlay } from '../entities/lootbox/ui/LootboxOverlay.tsx';
+import { closeLootbox } from '../entities/lootbox/lib/visibilityLootboxSlice.ts';
 
 const TABS: Tab[] = [
   { label: 'Tasks', value: 'tasks' },
