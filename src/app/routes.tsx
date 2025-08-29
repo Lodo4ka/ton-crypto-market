@@ -8,6 +8,7 @@ import { Market } from '../pages/Market';
 import { Game } from '../pages/Game';
 import { GameFree } from '../pages/GameFree';
 import { NFTDetail } from '../pages/NFTDetail';
+import { StickerPack } from '../pages/StickerPack';
 
 const AppRouter: React.FC = () => (
   <BrowserRouter>
@@ -20,6 +21,7 @@ const AppRouter: React.FC = () => (
           <Route path="/game" element={<Game />} />
           <Route path="/game-free" element={<GameFree />} />
           <Route path="/nft/:id" element={<NFTDetail />} />
+          <Route path="/sticker-pack/:id" element={<StickerPack />} />
           <Route path="*" element={<Profile />} />
         </Routes>
       </MainLayout>
