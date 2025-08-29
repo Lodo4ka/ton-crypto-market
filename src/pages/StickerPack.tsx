@@ -10,11 +10,13 @@ import sticker4 from '../assets/market/sticker4.png';
 import sticker5 from '../assets/market/sticker5.png';
 import sticker6 from '../assets/market/sticker6.png';
 import { BigPillFillButton } from '../shared/ui/big-pill-button/BigPillBtn.tsx';
+import { StickerPackOpenModal } from '../entities/stickerPack/StickerPackOpenModal';
 import { SuccessBadge } from '../shared/ui/success-badge';
 
 export const StickerPack = () => {
   const stickers = [sticker1, sticker2, sticker3, sticker4, sticker5, sticker6];
   const [activeIdx, setActiveIdx] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <div className="bg-[var(--tg-bg-black)] text-white">
@@ -76,8 +78,14 @@ export const StickerPack = () => {
 
       {/* CTA */}
       <div className="px-4 mt-6">
-        <BigPillFillButton color="yellow" />
+        <BigPillFillButton color="yellow" label="Open" onClick={() => setOpenModal(true)} />
       </div>
+
+      <StickerPackOpenModal
+        open={openModal}
+        onClose={() => setOpenModal(false)}
+        images={stickers}
+      />
     </div>
   );
 };
