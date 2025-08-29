@@ -11,7 +11,7 @@ import sticker5 from '../assets/market/sticker5.png';
 import sticker6 from '../assets/market/sticker6.png';
 import { BigPillFillButton } from '../shared/ui/big-pill-button/BigPillBtn.tsx';
 import { StickerPackOpenModal } from '../entities/stickerPack/StickerPackOpenModal';
-import { SuccessBadge } from '../shared/ui/success-badge';
+import { StickerAddedSnackbar } from '../shared/ui/snackbar/StickerAddedSnackbar';
 
 export const StickerPack = () => {
   const stickers = [sticker1, sticker2, sticker3, sticker4, sticker5, sticker6];
@@ -20,10 +20,7 @@ export const StickerPack = () => {
 
   return (
     <div className="bg-[var(--tg-bg-black)] text-white">
-      {/* Success badge */}
-      <div className="px-4 pt-4">
-        <SuccessBadge message="Sticker Pack was added to your profile" variant="tint" />
-      </div>
+      <StickerAddedSnackbar />
 
       <div className="pt-4">
         <NFTInfo
