@@ -1,4 +1,12 @@
-export const StickerTitle = ({ stickerIcon, title }: { stickerIcon: string; title: string }) => {
+export const StickerTitle = ({
+  stickerIcon,
+  title,
+  onViewAllClick,
+}: {
+  stickerIcon: string;
+  title: string;
+  onViewAllClick?: () => void;
+}) => {
   return (
     <>
       <div className="flex gap-3 items-center">
@@ -9,6 +17,14 @@ export const StickerTitle = ({ stickerIcon, title }: { stickerIcon: string; titl
           {title}
         </div>
       </div>
+      {onViewAllClick && (
+        <button
+          className="text-[#72c0ec] font-exo2-bold text-sm font-medium cursor-pointer"
+          onClick={onViewAllClick}
+        >
+          VIEW ALL
+        </button>
+      )}
     </>
   );
 };

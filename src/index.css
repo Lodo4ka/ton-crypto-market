@@ -113,3 +113,18 @@ body {
 .text-gray-primary-gray-1 {
   color: var(--primary-gray-1);
 }
+
+/* Custom Swiper pagination styles */
+.custom-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.custom-bullet-active {
+  background-color: #72c0ec;
+  transform: scale(1.2);
+}

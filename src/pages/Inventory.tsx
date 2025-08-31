@@ -3,6 +3,7 @@ import NavbarTabs from '../shared/ui/navbar-tabs/NavbarTabs.tsx';
 import type { Tab } from '../shared/ui/navbar-tabs/NavbarTabs.props.ts';
 import { TextField } from '../shared/ui/text-field/TextField.tsx';
 import { StickerTab } from './StickerTab.tsx';
+import { SkinTab } from './SkinTab.tsx';
 
 const TABS: Tab[] = [
   { label: 'Stickers', value: 'stickers' },
@@ -20,7 +21,10 @@ export const Inventory = () => {
       <NavbarTabs tabs={TABS} activeTab={activeTab} onTabClick={setActiveTab} />
 
       {/* Collections Section */}
-      <div className="flex flex-col gap-4">{activeTab === 'stickers' && <StickerTab />}</div>
+      <div className="flex flex-col gap-4">
+        {activeTab === 'stickers' && <StickerTab />}
+        {activeTab === 'skins' && <SkinTab />}
+      </div>
     </div>
   );
 };
