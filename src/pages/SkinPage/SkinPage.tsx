@@ -4,6 +4,7 @@ const ICON_MARKET = '/figma/7af774b2ae560345bc3d8a85eb59a6c829a3269a.svg';
 const ICON_BOX = '/figma/75e07b39cba5575fbfae1d7906bb3fd5796647cd.svg';
 
 import { useEffect } from 'react';
+import { IconButton } from '../../shared/ui/icon-button/IconButton.tsx';
 import { useAppDispatch } from '../../app/hooks.ts';
 import { setPlayButtonLabel } from '../../shared/ui/play-button/playButtonSlice.ts';
 import starBlack from '../../assets/icons/star-black.svg';
@@ -93,18 +94,12 @@ export const SkinPage = () => {
 
         {/* Actions */}
         <div className="mt-4 grid grid-cols-2 gap-2">
-          <button className="cursor-pointer flex items-center justify-center gap-2 rounded-[8px] bg-[rgba(255,255,255,0.1)] h-12">
-            <span className="inline-flex h-5 w-5 items-center justify-center">
-              <img src={ICON_MARKET} alt="Market" className="h-5 w-5" />
-            </span>
-            <span className="text-[14px] font-semibold">Find on Market</span>
-          </button>
-          <button className="cursor-pointer flex items-center justify-center gap-2 rounded-[8px] bg-[rgba(255,255,255,0.1)] h-12">
-            <span className="inline-flex h-5 w-5 items-center justify-center">
-              <img src={ICON_BOX} alt="Lootbox" className="h-5 w-5" />
-            </span>
-            <span className="text-[14px] font-semibold">Get from Lootbox</span>
-          </button>
+          <IconButton iconSrc={ICON_MARKET} iconAlt="Market" className="h-12">
+            Find on Market
+          </IconButton>
+          <IconButton iconSrc={ICON_BOX} iconAlt="Lootbox" className="h-12">
+            Get from Lootbox
+          </IconButton>
         </div>
       </div>
     </div>
