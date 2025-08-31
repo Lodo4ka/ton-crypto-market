@@ -44,10 +44,6 @@ export const LootBoxPageOverview = () => {
     return () => window.clearInterval(i);
   }, []);
 
-  const onGotIt = () => {
-    navigate(`/lootbox/${id ?? ''}`);
-  };
-
   return (
     <div className="w-full text-white">
       {/* Snackbar */}
@@ -61,8 +57,8 @@ export const LootBoxPageOverview = () => {
 
       {/* Content */}
       <div className="mx-auto w-full flex flex-col items-center gap-6 mt-6">
-        <div className="w-[240px] h-[240px] bg-white/5 border border-white/5 rounded-[20px] flex items-center justify-center">
-          <img src={bigLootbox} alt="Racer Box" className="w-[70%] object-contain" />
+        <div className="w-[258px] h-[258px] flex items-center justify-center">
+          <img src={bigLootbox} alt="Racer Box" className="object-contain" />
         </div>
 
         <div className="text-center">
@@ -70,7 +66,7 @@ export const LootBoxPageOverview = () => {
           <div className="text-[16px] text-[#AFB0B0] font-exo2-bold mt-1">UNKNOWN RARITY</div>
         </div>
 
-        <div className="text-center text-[16px]">
+        <div className="text-center text-[16px] mt-[80px]">
           <span className="font-semibold">Racer Box</span> will be ready in
         </div>
 
