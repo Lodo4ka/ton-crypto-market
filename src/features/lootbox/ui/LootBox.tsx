@@ -47,6 +47,45 @@ export const LootBox = ({
     }
   }, [currency]);
 
+  // hold-to-repeat for +/- buttons
+  const holdStartTimeout = useRef<number | null>(null);
+  const holdInterval = useRef<number | null>(null);
+
+  const applyDelta = useCallback(
+    (delta: number) => {
+      setCount((c) => {
+        const raw = c + delta;
+        const next = Math.max(min, Math.min(max, raw));
+        if (next !== c) onChange?.(next);
+        return next;
+      });
+    },
+    [max, min, onChange],
+  );
+
+  const startHold = useCallback(
+    (delta: number) => {
+      applyDelta(delta);
+      if (holdStartTimeout.current) window.clearTimeout(holdStartTimeout.current);
+      if (holdInterval.current) window.clearInterval(holdInterval.current);
+      holdStartTimeout.current = window.setTimeout(() => {
+        holdInterval.current = window.setInterval(() => applyDelta(delta), 80);
+      }, 350);
+    },
+    [applyDelta],
+  );
+
+  const stopHold = useCallback(() => {
+    if (holdStartTimeout.current) {
+      window.clearTimeout(holdStartTimeout.current);
+      holdStartTimeout.current = null;
+    }
+    if (holdInterval.current) {
+      window.clearInterval(holdInterval.current);
+      holdInterval.current = null;
+    }
+  }, []);
+
   const total = useMemo(() => count * price, [count, price]);
 
   const dec = useCallback(() => {
@@ -105,7 +144,7 @@ export const LootBox = ({
         {/* baseline */}
         <div className="absolute left-0 right-0 bottom-0 h-px bg-white/10" />
         <span
-          className="absolute bottom-0 h-1 bg-[#72c0ec] rounded"
+          className="absolute bottom-0 h-1 bg-[#72c0ec] rounded transition-[left,width] duration-300 ease-out"
           style={{ left: underlineStyle.left, width: underlineStyle.width }}
         />
       </div>
@@ -117,18 +156,32 @@ export const LootBox = ({
               type="button"
               aria-label="decrement"
               onClick={dec}
-              className="cursor-pointer text-[16px] text-white/40 px-2"
+              onMouseDown={() => startHold(-1)}
+              onMouseUp={stopHold}
+              onMouseLeave={stopHold}
+              onTouchStart={() => startHold(-1)}
+              onTouchEnd={stopHold}
+              onTouchCancel={stopHold}
+              disabled={count <= min}
+              className="cursor-pointer text-[16px] text-white/60 px-2 transition-transform active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               −
             </button>
-            <div className="text-[16px] text-center text-white font-semibold min-w-8 px-2">
+            <div className="text-[16px] text-center text-white font-semibold min-w-8 px-2 transition-opacity">
               {count}
             </div>
             <button
               type="button"
               aria-label="increment"
               onClick={inc}
-              className="cursor-pointer text-[16px] text-[#72c0ec] px-2"
+              onMouseDown={() => startHold(1)}
+              onMouseUp={stopHold}
+              onMouseLeave={stopHold}
+              onTouchStart={() => startHold(1)}
+              onTouchEnd={stopHold}
+              onTouchCancel={stopHold}
+              disabled={count >= max}
+              className="cursor-pointer text-[16px] text-[#72c0ec] px-2 transition-transform active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
             >
               +
             </button>
@@ -137,7 +190,7 @@ export const LootBox = ({
 
         {/* total */}
         <div className="flex flex-col gap-1 items-end pr-2">
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2.5 transition-colors">
             <span className="text-[15px] font-bold">Total:</span>
             <div className="flex items-center gap-1">
               <img src={starIconBorderGold} alt="star" className="w-[22px] h-[22px]" />
