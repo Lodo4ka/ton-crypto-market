@@ -13,12 +13,13 @@ import { NFTDetail } from '../pages/NFTDetail.tsx';
 import { StickerPack } from '../pages/StickerPack.tsx';
 import { GamePage } from '../pages/GamePage/GamePage.tsx';
 import { SkinPage } from '../pages/SkinPage/SkinPage.tsx';
+import { LootBoxPage } from '../pages/LootBoxPage/LootBoxPage.tsx';
 
 const BottomBarSwitch: React.FC = () => {
   const location = useLocation();
   const playLabel = useAppSelector((s) => s.playButton.label);
   const path = location.pathname;
-  const idPathRegex = /^\/(nft|sticker-pack|game|skin)\/[^/]+$/;
+  const idPathRegex = /^\/(nft|sticker-pack|game|skin|lootbox)\/[^/]+$/;
   const shouldShowPlay = idPathRegex.test(path) || path.includes('links');
 
   if (shouldShowPlay) {
@@ -48,6 +49,7 @@ const AppRouter: React.FC = () => (
           <Route path="/sticker-pack/:id" element={<StickerPack />} />
           <Route path="/game/:id" element={<GamePage />} />
           <Route path="/skin/:id" element={<SkinPage />} />
+          <Route path="/lootbox/:id" element={<LootBoxPage />} />
           <Route path="*" element={<Profile />} />
         </Routes>
       </MainLayout>

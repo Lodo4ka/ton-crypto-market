@@ -8,6 +8,7 @@ import { IconButton } from '../../shared/ui/icon-button/IconButton.tsx';
 import { useAppDispatch } from '../../app/hooks.ts';
 import { setPlayButtonLabel } from '../../shared/ui/play-button/playButtonSlice.ts';
 import starBlack from '../../assets/icons/star-black.svg';
+import shareIcon from '../../assets/icons/share-icon.svg';
 
 export const SkinPage = () => {
   const dispatch = useAppDispatch();
@@ -33,31 +34,7 @@ export const SkinPage = () => {
             <div className="flex-1">
               <div className="text-[22px] tracking-[0.66px] font-['Russo_One'] leading-[1.2] flex">
                 Extreme Power
-                <svg
-                  className="ml-auto"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="25"
-                  viewBox="0 0 24 25"
-                  fill="none"
-                >
-                  <g clipPath="url(#clip0_1271_29068)">
-                    <path
-                      d="M14 9.5V5.5L21 12.5L14 19.5V15.4C9 15.4 5.5 17 3 20.5C4 15.5 7 10.5 14 9.5Z"
-                      fill="white"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_1271_29068">
-                      <rect
-                        width="24"
-                        height="24"
-                        fill="white"
-                        transform="matrix(-1 0 0 1 24 0.5)"
-                      />
-                    </clipPath>
-                  </defs>
-                </svg>
+                <img src={shareIcon} alt="share" className="ml-auto" />
               </div>
               <div className="mt-1 flex items-center gap-1">
                 <div className="text-[#AFB0B0] text-[16px] font-exo2-bold leading-[16px]">
