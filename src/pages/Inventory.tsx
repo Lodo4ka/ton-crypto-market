@@ -4,6 +4,7 @@ import type { Tab } from '../shared/ui/navbar-tabs/NavbarTabs.props.ts';
 import { TextField } from '../shared/ui/text-field/TextField.tsx';
 import { StickerTab } from './StickerTab.tsx';
 import { SkinTab } from './SkinTab.tsx';
+import { LootBoxTab } from './LootBoxTab.tsx';
 
 const TABS: Tab[] = [
   { label: 'Stickers', value: 'stickers' },
@@ -24,6 +25,7 @@ export const Inventory = () => {
       <div className="flex flex-col gap-4">
         {activeTab === 'stickers' && <StickerTab />}
         {activeTab === 'skins' && <SkinTab />}
+        {activeTab === 'lootboxes' && <LootBoxTab />}
       </div>
     </div>
   );
