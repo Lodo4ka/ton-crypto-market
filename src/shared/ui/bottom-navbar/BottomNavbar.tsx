@@ -4,10 +4,10 @@ import profileIcon from '../../../assets/icons/profile.svg';
 import gameIcon from '../../../assets/icons/game.svg';
 import marketIcon from '../../../assets/icons/market.svg';
 import inventoryIcon from '../../../assets/icons/inventory.svg';
-import gameIconActive from '../../../assets/icons/game-active.svg';
 import marketIconActive from '../../../assets/icons/market-active.svg';
 import inventoryIconActive from '../../../assets/icons/inventory-active.svg';
 import profileIconActive from '../../../assets/icons/profile-active.svg';
+import gameIconActive from '../../../assets/icons/game-active.svg';
 
 export type BottomNavLink = {
   label: string;
@@ -26,6 +26,12 @@ const NAV_LINKS: BottomNavLink[] = [
     to: '/market',
     icon: marketIcon,
     iconActive: marketIconActive,
+  },
+  {
+    label: 'Game',
+    to: '/game',
+    icon: gameIcon,
+    iconActive: gameIconActive,
   },
   {
     label: 'My Inventory',
@@ -51,7 +57,7 @@ export const BottomNavbar = ({ className }: BottomNavbarProps) => {
         className,
       )}
     >
-      <div className="flex w-full justify-around items-end">
+      <div className="flex w-full justify-around items-end text-[12px]">
         {NAV_LINKS.map((link) => {
           const isActive = location.pathname === link.to;
           return (
@@ -73,11 +79,11 @@ export const BottomNavbar = ({ className }: BottomNavbarProps) => {
                   key={isActive ? link.iconActive : link.icon}
                   src={isActive ? link.iconActive : link.icon}
                   alt={link.label}
-                  width={32}
-                  height={32}
+                  width={24}
+                  height={24}
                 />
               </span>
-              <span>{link.label}</span>
+              <span className="text-[12px]">{link.label}</span>
             </Link>
           );
         })}
