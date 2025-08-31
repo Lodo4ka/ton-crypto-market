@@ -1,38 +1,26 @@
 import { useState } from 'react';
 import NavbarTabs from '../shared/ui/navbar-tabs/NavbarTabs.tsx';
 import type { Tab } from '../shared/ui/navbar-tabs/NavbarTabs.props.ts';
-import { SearchLootBox } from '../features/lootbox/ui/SearchLootBox.tsx';
+import { TextField } from '../shared/ui/text-field/TextField.tsx';
+import { StickerTab } from './StickerTab.tsx';
 
 const TABS: Tab[] = [
-  { label: 'Unlisted', value: 'unlisted' },
-  { label: 'Listed', value: 'listed' },
+  { label: 'Stickers', value: 'stickers' },
+  { label: 'Skins', value: 'skins' },
+  { label: 'Lootboxes', value: 'lootboxes' },
 ];
 
 export const Inventory = () => {
-  const [activeTab, setActiveTab] = useState('unlisted');
+  const [activeTab, setActiveTab] = useState('stickers');
   const [searchValue, setSearchValue] = useState('');
-
-  const onSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(e.target.value);
-  };
-
-  const onSort = () => {
-    console.log('sort');
-  };
-
-  const onFilter = () => {
-    console.log('filter');
-  };
 
   return (
     <div className="flex flex-col gap-[16px]">
-      <SearchLootBox
-        searchValue={searchValue}
-        handleSearchChange={onSearchChange}
-        onSort={onSort}
-        onFilter={onFilter}
-      />
+      <TextField type="search" value={searchValue} onChange={setSearchValue} placeholder="Search" />
       <NavbarTabs tabs={TABS} activeTab={activeTab} onTabClick={setActiveTab} />
+
+      {/* Collections Section */}
+      <div className="flex flex-col gap-4">{activeTab === 'stickers' && <StickerTab />}</div>
     </div>
   );
 };

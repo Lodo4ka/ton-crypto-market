@@ -9,7 +9,6 @@ import sticker6 from '../assets/market/sticker6.png';
 import { TextField } from '../shared/ui/text-field';
 import { BuyBadge } from '../shared/ui/buy-badge';
 import { SmallPillFillButton } from '../shared/ui/small-pill-fill-button/SmallPillButton.tsx';
-import { TimerBadge } from '../shared/ui/timer-badge';
 import { Banner } from '../entities/lootbox/ui/Banner.tsx';
 import { Sticker } from '../entities/lootbox/ui/Sticker.tsx';
 
