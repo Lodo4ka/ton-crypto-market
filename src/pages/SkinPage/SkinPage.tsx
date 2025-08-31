@@ -1,0 +1,112 @@
+const IMG_MAIN = '/figma/9516226d8348cc6a97e68a11b3c9e676ab455200.png';
+const ICON_VERIFIED = '/figma/1493812a7f5784cd8c9940fa58ca610dc19e0669.svg';
+const ICON_MARKET = '/figma/7af774b2ae560345bc3d8a85eb59a6c829a3269a.svg';
+const ICON_BOX = '/figma/75e07b39cba5575fbfae1d7906bb3fd5796647cd.svg';
+
+import { useEffect } from 'react';
+import { useAppDispatch } from '../../app/hooks.ts';
+import { setPlayButtonLabel } from '../../shared/ui/play-button/playButtonSlice.ts';
+import starBlack from '../../assets/icons/star-black.svg';
+
+export const SkinPage = () => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(
+      setPlayButtonLabel(
+        <div className="flex items-center justify-center gap-2">
+          <span>Get for</span>
+          <img src={starBlack} alt="star" className="w-6 h-6" />
+          <span>14 999</span>
+        </div>,
+      ),
+    );
+  }, [dispatch]);
+
+  return (
+    <div className="w-full text-white">
+      <div className="mx-auto w-full">
+        {/* Title block */}
+        <div className="mt-6 flex flex-col gap-4">
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex-1">
+              <div className="text-[22px] tracking-[0.66px] font-['Russo_One'] leading-[1.2] flex">
+                Extreme Power
+                <svg
+                  className="ml-auto"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                >
+                  <g clipPath="url(#clip0_1271_29068)">
+                    <path
+                      d="M14 9.5V5.5L21 12.5L14 19.5V15.4C9 15.4 5.5 17 3 20.5C4 15.5 7 10.5 14 9.5Z"
+                      fill="white"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1271_29068">
+                      <rect
+                        width="24"
+                        height="24"
+                        fill="white"
+                        transform="matrix(-1 0 0 1 24 0.5)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div className="mt-1 flex items-center gap-1">
+                <div className="text-[#AFB0B0] text-[16px] font-exo2-bold leading-[16px]">
+                  Top Speed: Racing Legends
+                </div>
+                <img src={ICON_VERIFIED} alt="verified" width={16} height={16} />
+              </div>
+            </div>
+          </div>
+
+          <div className="text-[14px] font-['Exo_2']">
+            A limited series of cars inspired racing winners from the first half of the 20th
+            century.
+          </div>
+        </div>
+
+        {/* Meta row */}
+        <div className="mt-4 flex items-center justify-between">
+          <div className="text-[#8847FF] text-[16px] font-exo2-bold uppercase">EPIC</div>
+          <div className="text-[16px] font-['Exo_2']">
+            <span className="text-[#AFB0B0]">Left: </span>
+            <span>287 / 2 222</span>
+          </div>
+        </div>
+
+        {/* Image */}
+        <div className="mt-4">
+          <img
+            src={IMG_MAIN}
+            alt="Extreme Power"
+            className="w-full rounded-[8px] aspect-square object-cover"
+          />
+        </div>
+
+        {/* Actions */}
+        <div className="mt-4 grid grid-cols-2 gap-2">
+          <button className="cursor-pointer flex items-center justify-center gap-2 rounded-[8px] bg-[rgba(255,255,255,0.1)] h-12">
+            <span className="inline-flex h-5 w-5 items-center justify-center">
+              <img src={ICON_MARKET} alt="Market" className="h-5 w-5" />
+            </span>
+            <span className="text-[14px] font-semibold">Find on Market</span>
+          </button>
+          <button className="cursor-pointer flex items-center justify-center gap-2 rounded-[8px] bg-[rgba(255,255,255,0.1)] h-12">
+            <span className="inline-flex h-5 w-5 items-center justify-center">
+              <img src={ICON_BOX} alt="Lootbox" className="h-5 w-5" />
+            </span>
+            <span className="text-[14px] font-semibold">Get from Lootbox</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -88,8 +88,6 @@ export const BottomNavbar = ({ className }: BottomNavbarProps) => {
           );
         })}
       </div>
-      {/* Индикатор свайпа/жестов */}
-      <div className="mt-2 w-32 h-2 bg-white/80 rounded-full" />
     </nav>
   );
 };
