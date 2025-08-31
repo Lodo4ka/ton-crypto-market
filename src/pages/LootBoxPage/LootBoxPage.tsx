@@ -1,5 +1,5 @@
 import { useAppDispatch } from '../../app/hooks';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { setPlayButtonLabel } from '../../shared/ui/play-button/playButtonSlice.ts';
 import starBlack from '../../assets/icons/star-black.svg';
 import { RarityBadge } from '../../shared/ui/rarity-badge/RarityBadge.tsx';
@@ -10,6 +10,7 @@ import lootbox11 from '../../assets/lootbox/11.png';
 import lootbox12 from '../../assets/lootbox/12.png';
 import bigLootbox from '../../assets/lootbox/big_lootbox.png';
 import shareIcon from '../../assets/icons/share-icon.svg';
+import BottomFilterBar from '../../features/lootbox/ui/BottomFilterBar.tsx';
 
 type Rarity = 'LEGENDARY' | 'EPIC' | 'RARE' | 'UNCOMMON' | 'COMMON';
 
@@ -42,6 +43,8 @@ const BOXES: { title: string; rarity: Rarity; left: string; img: string }[] = [
 
 export const LootBoxPage = () => {
   const dispatch = useAppDispatch();
+  const [count, setCount] = useState(1);
+  const PRICE = 14999;
 
   useEffect(() => {
     dispatch(
@@ -49,15 +52,15 @@ export const LootBoxPage = () => {
         <div className="flex items-center justify-center gap-2">
           <span>Get for</span>
           <img src={starBlack} alt="star" className="w-6 h-6" />
-          <span>14 999</span>
+          <span>{(count * PRICE).toLocaleString('ru-RU')}</span>
         </div>,
       ),
     );
-  }, [dispatch]);
+  }, [dispatch, count, PRICE]);
 
   return (
     <div className="w-full text-white">
-      <div className="mx-auto w-full">
+      <div className="mx-auto w-full pb-28">
         {/* Title and subtitle */}
         <div className="mt-6">
           <div className="text-[22px] tracking-[0.66px] font-['Russo_One'] leading-[1.2] flex items-center">
@@ -114,6 +117,7 @@ export const LootBoxPage = () => {
           ))}
         </div>
       </div>
+      <BottomFilterBar price={PRICE} onChange={setCount} />
     </div>
   );
 };
