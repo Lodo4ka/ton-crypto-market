@@ -1,2 +1,2 @@
 deploy:
-	npm run build && wrangler pages deploy dist
+	rm -rf dist && npm run build && wrangler pages deploy dist
