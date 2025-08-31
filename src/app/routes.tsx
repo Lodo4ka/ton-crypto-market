@@ -15,12 +15,14 @@ import { GamePage } from '../pages/GamePage/GamePage.tsx';
 import { SkinPage } from '../pages/SkinPage/SkinPage.tsx';
 import { LootBoxPage } from '../pages/LootBoxPage/LootBoxPage.tsx';
 import { LootBoxPageOverview } from '../pages/LootBoxPageOverview/LootBoxPageOverview.tsx';
+import { LootBoxSlider } from '../pages/LootBoxSlider/LootBoxSlider.tsx';
 
 const BottomBarSwitch: React.FC = () => {
   const location = useLocation();
   const playLabel = useAppSelector((s) => s.playButton.label);
   const path = location.pathname;
-  const idPathRegex = /^\/(nft|sticker-pack|game|skin|lootbox|lootbox-overview)\/[^/]+$/;
+  const idPathRegex =
+    /^\/(nft|sticker-pack|game|skin|lootbox|lootbox-overview|lootbox-slider)\/[^/]+$/;
   const shouldShowPlay = idPathRegex.test(path) || path.includes('links');
 
   if (shouldShowPlay) {
@@ -52,6 +54,7 @@ const AppRouter: React.FC = () => (
           <Route path="/skin/:id" element={<SkinPage />} />
           <Route path="/lootbox/:id" element={<LootBoxPage />} />
           <Route path="/lootbox-overview/:id/" element={<LootBoxPageOverview />} />
+          <Route path="/lootbox-slider/:id" element={<LootBoxSlider />} />
           <Route path="*" element={<Profile />} />
         </Routes>
       </MainLayout>
