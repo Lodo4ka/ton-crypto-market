@@ -21,5 +21,3 @@ export const BottomCTA: FC<BottomCTAProps> = ({ label = 'Play', className, ...pr
 };
 
 export default BottomCTA;
-
-

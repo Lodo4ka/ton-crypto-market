@@ -1,11 +1,13 @@
 import type { FC } from 'react';
 import { SwiperSlide } from 'swiper/react';
-import { SectionHeader } from '../shared/ui/section-header/SectionHeader';
-import { ItemCard } from '../shared/ui/item-card/ItemCard';
-import { HorizontalScroller } from '../shared/ui/horizontal-scroller/HorizontalScroller';
-import { HeroSlider } from '../shared/ui/hero-slider/HeroSlider';
-import { GameHeader } from '../shared/ui/game-header/GameHeader';
-import { BottomCTA } from '../shared/ui/bottom-cta/BottomCTA';
+import { SectionHeader } from '../../shared/ui/section-header/SectionHeader';
+import { ItemCard } from '../../shared/ui/item-card/ItemCard';
+import { HorizontalScroller } from '../../shared/ui/horizontal-scroller/HorizontalScroller';
+import { HeroSlider } from '../../shared/ui/hero-slider/HeroSlider';
+import { GameHeader } from '../../shared/ui/game-header/GameHeader';
+import { BottomCTA } from '../../shared/ui/bottom-cta/BottomCTA';
+import { GamePageTitle } from './GamePageTitle';
+import { PlayButton } from '../../shared/ui/play-button/PlayButton';
 
 type GamePageProps = {
   className?: string;
@@ -88,19 +90,15 @@ export const GamePage: FC<GamePageProps> = ({ className }) => {
         subtitle="300k total players"
       />
 
-      {/* Description */}
-      <div className="mt-4 text-[16px] leading-[1.25]" style={{ color: 'rgba(255,255,255,0.8)' }}>
-        Become a street racing legend!
-        <br />
-        <br />
-        Beat criminal overlords and become the biggest fish in the city! Dominate your criminally
-        insane rivals in extreme head-to-head drag races.
-      </div>
+      <GamePageTitle
+        title="Become a street racing legend!"
+        description="Beat criminal overlords and become the biggest fish in the city! Dominate your criminally insane rivals in extreme head-to-head drag races."
+      />
 
       {/* Skins section */}
       <div className="mt-6 flex flex-col gap-3">
         <SectionHeader title="Skins" count={28} />
-        <div className="px-4">
+        <div>
           <HorizontalScroller>
             {skinsData.map((item) => (
               <SwiperSlide key={item.title} style={{ width: 114 }}>
@@ -140,7 +138,8 @@ export const GamePage: FC<GamePageProps> = ({ className }) => {
       </div>
 
       {/* Bottom CTA */}
-      <BottomCTA label="Play" />
+      {/* <BottomCTA label="Play" /> */}
+      <PlayButton className="!py-3" text="Play" onClick={() => {}} />
     </div>
   );
 };

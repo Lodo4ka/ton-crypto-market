@@ -9,7 +9,7 @@ import { Game } from '../pages/Game.tsx';
 import { GameFree } from '../pages/GameFree.tsx';
 import { NFTDetail } from '../pages/NFTDetail.tsx';
 import { StickerPack } from '../pages/StickerPack.tsx';
-import { GamePage } from '../pages/GamePage.tsx';
+import { GamePage } from '../pages/GamePage/GamePage.tsx';
 
 const AppRouter: React.FC = () => (
   <BrowserRouter>

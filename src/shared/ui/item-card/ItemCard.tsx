@@ -23,8 +23,13 @@ export const ItemCard: FC<ItemCardProps> = ({ title, rarity, img, className }) =
     >
       <img src={img} alt={title} width={106} height={106} className="rounded-[8px]" />
       <div className="w-full px-2 flex flex-col gap-0.5">
-        <div className="w-full text-white text-[14px] font-bold leading-[1.2] truncate">{title}</div>
-        <div className="text-[12px] font-bold leading-[1.2]" style={{ color: rarityColor }}>
+        <div className="w-full text-white text-[14px] font-bold leading-[1.2] truncate">
+          {title}
+        </div>
+        <div
+          className="text-[12px] font-exo2-bold leading-[1.2]"
+          style={{ color: rarityColor, textTransform: 'uppercase' }}
+        >
           {rarity}
         </div>
       </div>
@@ -33,5 +38,3 @@ export const ItemCard: FC<ItemCardProps> = ({ title, rarity, img, className }) =
 };
 
 export default ItemCard;
-
-
