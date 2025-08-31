@@ -1,5 +1,5 @@
 import { useAppDispatch } from '../../app/hooks';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { setPlayButtonLabel } from '../../shared/ui/play-button/playButtonSlice.ts';
 import starBlack from '../../assets/icons/star-black.svg';
 import { RarityBadge } from '../../shared/ui/rarity-badge/RarityBadge.tsx';
@@ -11,6 +11,7 @@ import lootbox12 from '../../assets/lootbox/12.png';
 import bigLootbox from '../../assets/lootbox/big_lootbox.png';
 import shareIcon from '../../assets/icons/share-icon.svg';
 import BottomFilterBar from '../../features/lootbox/ui/BottomFilterBar.tsx';
+import { LootBoxOverlay } from '../../features/lootbox/ui/LootBoxOverlay.tsx';
 
 type Rarity = 'LEGENDARY' | 'EPIC' | 'RARE' | 'UNCOMMON' | 'COMMON';
 
@@ -45,6 +46,7 @@ export const LootBoxPage = () => {
   const dispatch = useAppDispatch();
   const [count, setCount] = useState(1);
   const PRICE = 14999;
+  const params = new URLSearchParams(window.location.search);
 
   useEffect(() => {
     dispatch(
@@ -57,6 +59,14 @@ export const LootBoxPage = () => {
       ),
     );
   }, [dispatch, count, PRICE]);
+
+  const showFilter = useMemo(() => {
+    return params.get('f') === '1';
+  }, [params]);
+
+  const showOverlay = useMemo(() => {
+    return params.get('o') === '1';
+  }, [params]);
 
   return (
     <div className="w-full text-white">
@@ -117,7 +127,8 @@ export const LootBoxPage = () => {
           ))}
         </div>
       </div>
-      <BottomFilterBar price={PRICE} onChange={setCount} />
+      {showFilter && <BottomFilterBar price={PRICE} onChange={setCount} />}
+      {showOverlay && <LootBoxOverlay open={showOverlay} price={PRICE} onClose={() => {}} />}
     </div>
   );
 };
