@@ -15,7 +15,7 @@ export const TonWallet = ({ className }: { className?: string }) => {
       className={`bg-[#F3F084] text-black text-[14px] font-russo rounded-full px-[16px] py-[8px] w-[170px] ${className ?? ''}`}
     >
       <button className="flex items-center justify-center" onClick={handleClick}>
-        <div className="flex items-center justify-center gap-2  whitespace-nowrap">
+        <div className="flex items-center justify-center gap-1  whitespace-nowrap">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="21"

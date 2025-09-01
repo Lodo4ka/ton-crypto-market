@@ -5,6 +5,7 @@ import { ProfileTitle } from '../entities/user/ui/ProfileTitle.tsx';
 import { SmallPillFillButton } from '../shared/ui/small-pill-fill-button/SmallPillButton.tsx';
 import { ProfileCollectionsDropdown } from '../entities/user/ui/ProfileCollectionsDropdown.tsx';
 import { TonWallet } from '../shared/ui/TonWallet/TonWallet.tsx';
+import { ProgressLevelBar } from '../entities/user/ui/ProgressLevelBar/ProgressLevelBar.tsx';
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -16,6 +17,13 @@ const Profile = () => {
       <div className="mt-[20px] flex justify-center">
         <TonWallet />
       </div>
+      <ProgressLevelBar
+        className="mt-[20px] px-[16px]"
+        currentLevel={1}
+        maxLevel={10}
+        progressPercent={50}
+        marks={[0, 25, 50, 75, 100]}
+      />
       <div className="mt-[16px] px-[16px]">
         <ProfileCollectionsDropdown />
       </div>
