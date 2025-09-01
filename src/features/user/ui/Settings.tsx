@@ -27,10 +27,10 @@ const LanguageFlag = ({
     <button
       type="button"
       onClick={onClick}
-      className={`relative flex items-center justify-center rounded-full p-1 transition-all ${selected ? 'ring-4 ring-blue-500' : 'ring-2 ring-black/30'} ${className} cursor-pointer`}
+      className={`relative flex items-center justify-center rounded-full p-1 transition-all ${selected ? 'ring-2 ring-[#72C0EC]' : 'ring-2 ring-black/30'} ${className} cursor-pointer`}
       aria-pressed={selected}
     >
-      <img src={flags[code] as string} alt={code} className="w-12 h-12 rounded-full" />
+      <img src={flags[code] as string} alt={code} className="w-[28px] h-[25px] rounded-full" />
     </button>
   );
 };

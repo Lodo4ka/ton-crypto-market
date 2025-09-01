@@ -10,7 +10,7 @@ export const Switch = ({ checked, onChange, className = '', disabled = false }: 
     <button
       type="button"
       className={`w-[51px] h-[31px] flex items-center px-1 rounded-full transition-colors duration-200 focus:outline-none ${
-        checked ? 'bg-green-500' : 'bg-gray-600'
+        checked ? 'bg-[#72C0EC]' : 'bg-gray-600'
       } ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'} ${className}`}
       onClick={() => !disabled && onChange(!checked)}
       aria-pressed={checked}
