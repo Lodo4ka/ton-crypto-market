@@ -4,6 +4,7 @@ import { ProfileBar } from '../entities/user/ui/ProfileBar.tsx';
 import { ProfileTitle } from '../entities/user/ui/ProfileTitle.tsx';
 import { SmallPillFillButton } from '../shared/ui/small-pill-fill-button/SmallPillButton.tsx';
 import { ProfileCollectionsDropdown } from '../entities/user/ui/ProfileCollectionsDropdown.tsx';
+import { TonWallet } from '../shared/ui/TonWallet/TonWallet.tsx';
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -12,6 +13,9 @@ const Profile = () => {
     <div className="">
       <ProfileBar />
       <ProfileTitle className="mt-[16px]" />
+      <div className="mt-[20px] flex justify-center">
+        <TonWallet />
+      </div>
       <div className="mt-[16px] px-[16px]">
         <ProfileCollectionsDropdown />
       </div>
