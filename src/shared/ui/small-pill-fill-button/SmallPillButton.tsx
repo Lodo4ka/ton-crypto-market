@@ -1,7 +1,7 @@
 import { BtnPill } from '../pill-btn/BtnMain.tsx';
 import React from 'react';
 
-export type SmallPillButtonColor = 'yellow' | 'blue' | 'yellow-blur' | 'blue-blur';
+export type SmallPillButtonColor = 'yellow' | 'blue' | 'yellow-blur' | 'blue-blur' | 'gray';
 
 export interface SmallPillButtonProps {
   label?: string | React.ReactNode;
@@ -20,6 +20,9 @@ const getColors = (color: SmallPillButtonColor) => {
   }
   if (color === 'blue-blur') {
     return { container: 'bg-[rgba(114,192,236,0.25)]', text: 'text-[#72c0ec]' } as const;
+  }
+  if (color === 'gray') {
+    return { container: 'bg-[#5E5E5E]', text: 'text-white' } as const;
   }
   return { container: 'bg-[#f3f084]', text: 'text-black' } as const;
 };
