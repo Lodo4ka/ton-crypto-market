@@ -16,6 +16,7 @@ import { SkinPage } from '../pages/SkinPage/SkinPage.tsx';
 import { LootBoxPage } from '../pages/LootBoxPage/LootBoxPage.tsx';
 import { LootBoxPageOverview } from '../pages/LootBoxPageOverview/LootBoxPageOverview.tsx';
 import { LootBoxSlider } from '../pages/LootBoxSlider/LootBoxSlider.tsx';
+import { MarketPage } from '../pages/MarketPage/MarketPage.tsx';
 
 const BottomBarSwitch: React.FC = () => {
   const location = useLocation();
@@ -46,6 +47,7 @@ const AppRouter: React.FC = () => (
           <Route path="/" element={<Profile />} />
           <Route path="/inventory" element={<Inventory />} />
           <Route path="/market" element={<Market />} />
+          <Route path="/market-page" element={<MarketPage />} />
           <Route path="/game" element={<Game />} />
           <Route path="/game-free" element={<GameFree />} />
           <Route path="/nft/:id" element={<NFTDetail />} />

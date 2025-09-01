@@ -4,11 +4,11 @@ interface RarityBadgeProps {
 }
 
 const rarityColors = {
-  LEGENDARY: '#FF9411', // orange из Figma
-  RARE: '#4B69FF', // blue из Figma
-  EPIC: '#9F4FFF', // purple
-  UNCOMMON: '#B0C3D9', // gray из Figma
-  COMMON: '#72C0EC', // blue
+  LEGENDARY: '#FF9411',
+  RARE: '#4B69FF',
+  EPIC: '#9F4FFF',
+  UNCOMMON: '#B0C3D9',
+  COMMON: '#72C0EC',
 };
 
 export const RarityBadge = ({ rarity, className = '' }: RarityBadgeProps) => {
