@@ -84,7 +84,9 @@ export const HistoryTable: React.FC<HistoryTableProps> = ({ className }) => {
             <span className="text-white text-base leading-tight truncate">{item.title}</span>
             <span className="text-xs text-white/40 leading-tight">{item.time}</span>
           </div>
-          <span className={`ml-3 text-sm text-right ${item.amountClass}`}>{item.amount}</span>
+          <span className={`ml-3 text-sm text-right font-exo2 ${item.amountClass}`}>
+            {item.amount}
+          </span>
           <button className="ml-3 p-1 cursor-pointer">
             <img src={ChevronIcon} alt="chevron" className="w-6 h-6 opacity-40" />
           </button>

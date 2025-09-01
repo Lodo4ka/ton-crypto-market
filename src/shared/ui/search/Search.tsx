@@ -1,11 +1,11 @@
-import searchIcon from '../../../assets/icons/search.svg';
 import sortIcon from '../../../assets/icons/sort.svg';
-import filterIcon from '../../../assets/icons/mingcute_settings-6-line.svg';
+import filterIcon from '../../../assets/icons/mingcute_settings-6-line-yellow.svg';
+import { TextField } from '../text-field/TextField';
 
 interface SearchProps {
   className?: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (value: string) => void;
   onSort?: () => void;
   onFilter?: () => void;
   sorted?: boolean;
@@ -23,32 +23,31 @@ export const Search = ({
 }: SearchProps) => {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
-      <div className="flex flex-1 items-center bg-[#191919] rounded-2xl px-5 h-14">
-        <img src={searchIcon} alt="search" className="w-6 h-6 mr-3" />
-        <input
-          type="text"
-          placeholder="Search"
-          className="bg-transparent outline-none text-lg text-white placeholder-[#6B7280] flex-1"
-          value={value}
-          onChange={onChange}
-        />
-      </div>
+      <TextField
+        type="search"
+        value={value}
+        onChange={onChange}
+        placeholder="Search"
+        className="flex-1 !h-9"
+      />
       {sorted && (
         <button
           type="button"
-          className="bg-[#191919] rounded-2xl w-14 h-14 flex items-center justify-center cursor-pointer"
+          className="w-9 h-9 flex items-center justify-center rounded-[12px] bg-white/10 cursor-pointer"
+          aria-label="Sort"
           onClick={onSort}
         >
-          <img src={sortIcon} alt="filter" className="w-7 h-7 text-[#2563EB]" />
+          <img src={sortIcon} alt="sort" className="w-5 h-5" />
         </button>
       )}
       {filtered && (
         <button
           type="button"
-          className="bg-[#191919] rounded-2xl w-14 h-14 flex items-center justify-center cursor-pointer"
+          className="w-9 h-9 flex items-center justify-center rounded-[12px] bg-[#F3F084] cursor-pointer"
+          aria-label="Settings"
           onClick={onFilter}
         >
-          <img src={filterIcon} alt="filter" className="w-7 h-7 text-[#2563EB]" />
+          <img src={filterIcon} alt="settings" className="w-5 h-5" />
         </button>
       )}
     </div>

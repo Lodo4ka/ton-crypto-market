@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Search } from '../../../shared/ui/search/Search';
 import { HistoryTable } from './HistoryTable';
+import { Search } from '../../../shared/ui/search/Search';
 
 interface HistoryProps {
   className?: string;
@@ -9,8 +9,8 @@ interface HistoryProps {
 export const History = ({ className = '' }: HistoryProps) => {
   const [search, setSearch] = useState('');
 
-  const onClickHandleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
+  const onClickHandleSearch = (value: string) => {
+    setSearch(value);
   };
 
   const onFilter = () => {
@@ -20,11 +20,11 @@ export const History = ({ className = '' }: HistoryProps) => {
   return (
     <div className={className}>
       <Search
-        filtered
-        value={search}
         onChange={onClickHandleSearch}
-        className="mb-[24px]"
+        value={search}
         onFilter={onFilter}
+        className="mb-[24px]"
+        filtered
       />
       <HistoryTable />
     </div>
