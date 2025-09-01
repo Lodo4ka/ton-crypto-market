@@ -59,7 +59,7 @@ const Profile = () => {
         )}
         {activeTab === 'referrals' && (
           <>
-            <Referrals />
+            <Referrals className="mb-[24px]" />
             <InviteReferrals />
           </>
         )}
