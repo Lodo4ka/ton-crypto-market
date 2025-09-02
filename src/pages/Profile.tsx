@@ -15,6 +15,7 @@ import { Referrals } from '../features/user/ui/Referrals.tsx';
 import { InviteReferrals } from '../features/user/ui/InviteReferrals.tsx';
 import { History } from '../features/user/ui/History.tsx';
 import { Settings } from '../features/user/ui/Settings.tsx';
+import { BattlePass } from '../entities/battlepass/BattlePass.tsx';
 
 const TABS: Tab[] = [
   { label: 'Tasks', value: 'tasks' },
@@ -25,7 +26,6 @@ const TABS: Tab[] = [
 
 const Profile = () => {
   const [activeTab, setActiveTab] = useState('tasks');
-  const navigate = useNavigate();
 
   return (
     <div className="">
@@ -34,6 +34,7 @@ const Profile = () => {
       <div className="mt-[20px] flex justify-center">
         <TonWallet />
       </div>
+      <BattlePass className="mt-[20px]" />
       <ProgressLevelBar
         className="mt-[20px] px-[16px]"
         currentLevel={1}
