@@ -2,6 +2,7 @@ import React from 'react';
 import { BattlePass } from './BattlePass';
 import CheckOutlined from '../../assets/icons/Icon/CheckOutlined.svg';
 import styles from './BattlePassGame.module.css';
+import LVL_star_1 from '../../assets/icons/LVL_star_1.svg';
 
 type Reward = {
   quantity: number;
@@ -18,7 +19,7 @@ interface BattlePassGameProps {
   className?: string;
 }
 
-const STAR_YELLOW = '/src/assets/icons/star-yellow-cicrle.svg';
+// const STAR_YELLOW = '/src/assets/icons/star-yellow-cicrle.svg';
 
 function RewardCard({ reward, variant }: { reward: Reward; variant: 'free' | 'premium' }) {
   const containerBg =
@@ -47,20 +48,14 @@ function RewardCard({ reward, variant }: { reward: Reward; variant: 'free' | 'pr
   );
 }
 
-function LevelStar({ level, ready }: { level: number; ready?: boolean }) {
+function LevelStar({ level }: { level: number }) {
+  console.log('level :>> ', level);
   return (
-    <div className="flex w-full flex-col items-center">
-      <div className="h-2 w-1 rounded-full bg-[linear-gradient(180deg,#ffc53d_43%,#faad14_96%)]" />
-      <div className="my-1 inline-flex items-center justify-center">
-        <img
-          src={STAR_YELLOW}
-          alt="level"
-          className={`h-10 w-10 ${ready ? '' : 'grayscale opacity-80'}`}
-        />
-        <span className="-ml-7 text-sm font-bold text-white">{level}</span>
-      </div>
-      <div className="h-2 w-1 rounded-full bg-[linear-gradient(180deg,#ffc53d_43%,#faad14_96%)]" />
-    </div>
+    <img
+      src={LVL_star_1}
+      alt="level-star"
+      className="z-10 w-[50px] h-[50px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-none"
+    />
   );
 }
 
@@ -71,7 +66,6 @@ export const BattlePassGame: React.FC<BattlePassGameProps> = ({ className }) => 
     { level: 3, free: { quantity: 50 }, premium: { quantity: 50 } },
     { level: 4, free: { quantity: 50 }, premium: { quantity: 50 } },
   ];
-
   return (
     <section
       className={`rounded-xl bg-[var(--tg-bg-light)] ${className ?? ''}`}
@@ -79,7 +73,7 @@ export const BattlePassGame: React.FC<BattlePassGameProps> = ({ className }) => 
     >
       <BattlePass />
 
-      <div className="mx-auto w-full">
+      <div className="mx-auto w-full relative">
         <div className="flex text-[16px]">
           <div className="text-center text-[16px] font-exo2-bold text-white flex-1 bg-[#5E5E5E] p-[8px]">
             Free Pass
@@ -88,26 +82,27 @@ export const BattlePassGame: React.FC<BattlePassGameProps> = ({ className }) => 
             Battle Pass
           </div>
         </div>
-        <div className="grid grid-cols-[1fr_minmax(16px,24px)_1fr]">
-          {levels.map((lvl, idx) => (
-            <React.Fragment key={lvl.level}>
+        <div className="flex flex-col">
+          {levels.map((lvl) => (
+            <div key={lvl.level} className="relative grid grid-cols-[1fr_8px_1fr]">
               <div
                 className={`${styles.freePassBackground} py-[20px] flex justify-center items-center`}
               >
                 <RewardCard reward={lvl.free} variant="free" />
               </div>
-
-              <div className="flex flex-col items-center py-3">
-                <LevelStar level={lvl.level} ready={idx === 0} />
+              <div className="flex flex-col items-center h-full relative">
+                <LevelStar level={lvl.level} />
               </div>
-
               <div
                 className={`${styles.battlePassBackground} py-[20px] flex justify-center items-center`}
               >
                 <RewardCard reward={lvl.premium} variant="premium" />
               </div>
-            </React.Fragment>
+            </div>
           ))}
+        </div>
+        <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-full">
+          <div className={`${styles.linear} h-full w-[8px]`} aria-label={`level-${1}`}></div>
         </div>
       </div>
     </section>

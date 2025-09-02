@@ -86,3 +86,22 @@
   text-shadow: 0 0.7px 1px #01010E, 0 0.5px 0 #01010E;
   color: #FFF;
 }
+
+.linear {
+  background: #FAAD14;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.80);
+  position: relative;
+}
+
+.linear::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, #FFC53D 42.56%, #FAAD14 96.09%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
