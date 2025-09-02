@@ -1,0 +1,7 @@
+.nftText {
+  background: linear-gradient(135deg, rgba(195, 105, 60, 1) 0%, rgba(251, 230, 123, 1) 35%, rgba(252, 251, 231, 1) 50%, rgba(247, 209, 78, 1) 70%, rgba(212, 160, 65, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}

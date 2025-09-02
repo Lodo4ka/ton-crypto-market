@@ -1,4 +1,6 @@
-import { Share2 } from 'lucide-react';
+import { NFTActions } from '../../../features/nft/NFTActions';
+import { setPlayButtonComponent } from '../play-button/playButtonSlice';
+import styles from './NFTInfo.module.css';
 
 interface NFTInfoProps {
   title: string;
@@ -20,7 +22,7 @@ export const NFTInfo = ({
   className = '',
 }: NFTInfoProps) => {
   return (
-    <div className={`px-4 py-4 ${className}`}>
+    <div className={`${className}`}>
       {/* Title and Share */}
       <div className="flex items-center justify-between">
         <h1 className="text-white text-2xl font-['Russo_One'] tracking-wider">{title}</h1>
@@ -47,7 +49,7 @@ export const NFTInfo = ({
 
       {/* Collection */}
       <div className="flex items-center gap-2 mb-4">
-        <span className="text-gray-300 text-base font-['Exo_2'] font-semibold">{collection}</span>
+        <span className="text-[#AFB0B0] text-base font-exo2-bold ">{collection}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -67,14 +69,17 @@ export const NFTInfo = ({
       </div>
 
       {/* Description */}
-      <p className="text-[#AFB0B0] text-sm leading-relaxed">{description}</p>
+      <p className="font-exo2 text-[14px] mb-[26px]">{description}</p>
 
       {/* NFT Count */}
       {leftCount && totalCount && (
         <div className="flex items-center justify-between">
-          <span className="text-white font-semibold">{nftLabel}</span>
-          <span className="text-gray-300 text-sm">
-            Left: {leftCount} / {totalCount}
+          <span className={`${styles.nftText} text-[16px] font-exo2-bold`}>{nftLabel}</span>
+          <span className="text-[#AFB0B0] text-[16px] font-exo2">
+            Left:{' '}
+            <span className="text-white">
+              {leftCount} / {totalCount}
+            </span>
           </span>
         </div>
       )}

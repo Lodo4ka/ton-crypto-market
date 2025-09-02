@@ -21,16 +21,22 @@ import { MarketPage } from '../pages/MarketPage/MarketPage.tsx';
 const BottomBarSwitch: React.FC = () => {
   const location = useLocation();
   const playLabel = useAppSelector((s) => s.playButton.label);
+  const playVisible = useAppSelector((s) => s.playButton.visible);
+  const CustomComponent = useAppSelector((s) => s.playButton.component);
   const path = location.pathname;
   const idPathRegex =
     /^\/(nft|sticker-pack|game|skin|lootbox|lootbox-overview|lootbox-slider)\/[^/]+$/;
-  const shouldShowPlay = idPathRegex.test(path) || path.includes('links');
+  const shouldShowPlay = playVisible || idPathRegex.test(path) || path.includes('links');
 
   if (shouldShowPlay) {
     return (
       <div className="w-full bg-[#151413] py-2 border-t border-[#232323] fixed bottom-0 z-10">
         <div className="w-full max-w-[576px] mx-auto px-[16px]">
-          <PlayButton className="!py-3">{playLabel}</PlayButton>
+          {CustomComponent ? (
+            CustomComponent
+          ) : (
+            <PlayButton className="!py-3">{playLabel}</PlayButton>
+          )}
         </div>
       </div>
     );

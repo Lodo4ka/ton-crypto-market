@@ -11,10 +11,9 @@ interface NFTPropertiesProps {
 
 export const NFTProperties = ({ properties, className = '' }: NFTPropertiesProps) => {
   return (
-    <div className={`px-4 ${className}`}>
-      <div className="grid grid-cols-2 gap-0 rounded-lg overflow-hidden">
-        {/* Labels column */}
-        <div className="bg-[#1A1A1A]">
+    <div className={`${className}`}>
+      <div className="grid grid-cols-[max-content_1fr] gap-0 rounded-lg overflow-hidden border border-gray-700">
+        <div className="border-r border-gray-700">
           {properties.map((property, index) => (
             <div
               key={`label-${index}`}
@@ -34,9 +33,7 @@ export const NFTProperties = ({ properties, className = '' }: NFTPropertiesProps
             >
               <span
                 className={`text-base ${
-                  property.highlighted
-                    ? 'text-[#FF8C00] font-bold'
-                    : 'text-white'
+                  property.highlighted ? 'text-[#FF8C00] font-bold font-exo2-bold' : 'text-white'
                 }`}
               >
                 {property.value}
