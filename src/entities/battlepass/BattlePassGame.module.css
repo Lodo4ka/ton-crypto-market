@@ -1,0 +1,88 @@
+.freePassBackground {
+  background-image: url('../../assets/dots_background-black.svg');
+  background-size: cover;
+  background-position: center;
+  background-color: #212537;
+}
+/* 129 129 134 */
+.freePassBackgroundCard {
+  /* Верхний мягкий свет и нижнее затемнение как в фигме */
+  background:rgb(66 66 72);
+}
+
+.rewardCard {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  /* Лёгкие внутренние тени для объёма */
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.06), inset 0 -3px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* Градиентная рамка через маску (маска как в фигме). Работает в современных браузерах */
+.gradientBorder,
+.gradientBorderGold {
+  position: relative;
+  border-radius: 8px;
+}
+
+.gradientBorder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) -0.67%, rgba(0, 0, 0, 0.6) 101.16%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.gradientBorderGold::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px; /* толщина рамки */
+  border-radius: inherit;
+  background: linear-gradient(360deg, rgba(96, 96, 96, 1) 0.64%, rgba(255, 255, 255, 1) 98.2%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.previewBox {
+  width: 74px;
+  height: 52px;
+  border-radius: 8px;
+  background: rgb(40 40 45);
+}
+
+.previewBoxBattlePass {
+  width: 74px;
+  height: 52px;
+  border-radius: 8px;
+  background: linear-gradient(296deg, #FFDE78 0.64%, #9C7C16 98.2%);
+}
+
+
+.battlePassBackground {
+  background-image: url('../../assets/dots_background-white..svg');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(212, 160, 0, 1)
+}
+
+.battlePassBackgroundCard {
+  /* Верхний бликовый слой + основной золотой градиент */
+  background: linear-gradient(148deg, #FEC43D -0.67%, #D37706 101.16%);
+}
+
+.rewardQuantityFree {
+  color: rgb(115 115 121);
+  text-shadow: 0 0.7px 1px #01010E, 0 0.5px 0 #01010E;
+}
+.rewardQuantityBattlePass {
+  text-shadow: 0 0.7px 1px #01010E, 0 0.5px 0 #01010E;
+  color: #FFF;
+}

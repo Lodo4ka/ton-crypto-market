@@ -16,6 +16,7 @@ import { InviteReferrals } from '../features/user/ui/InviteReferrals.tsx';
 import { History } from '../features/user/ui/History.tsx';
 import { Settings } from '../features/user/ui/Settings.tsx';
 import { BattlePass } from '../entities/battlepass/BattlePass.tsx';
+import { BattlePassGame } from '../entities/battlepass/BattlePassGame.tsx';
 
 const TABS: Tab[] = [
   { label: 'Tasks', value: 'tasks' },
@@ -42,6 +43,7 @@ const Profile = () => {
         progressPercent={50}
         marks={[0, 25, 50, 75, 100]}
       />
+      <BattlePassGame className="mt-[20px]" />
       <div className="mt-[16px] px-[16px]">
         <ProfileCollectionsDropdown />
       </div>
